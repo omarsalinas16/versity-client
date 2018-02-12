@@ -1,10 +1,12 @@
 <template>
 	<div id="navbar">
-		<img src="@/assets/logo.png" alt="Versity logo" class="logo">
+		<router-link to="/" class="logo">
+			<img src="@/assets/logo.png" alt="Versity logo">
+		</router-link>
 		<nav>
-			<a href="">Menu Item</a>
-			<a href="">Menu Item</a>
-			<a href="">Menu Item</a>
+			<router-link to="/about">Menu Item</router-link>
+			<router-link to="/bussiness">Menu Item</router-link>
+			<router-link to="/personal">Menu Item</router-link>
 		</nav>
 	</div>
 </template>
@@ -50,6 +52,8 @@ export default {
 }
 
 #navbar > .logo {
+	height: 100%;
+	display: block;
 	margin-right: 2rem;
 }
 
