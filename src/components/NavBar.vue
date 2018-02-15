@@ -20,6 +20,7 @@ export default {
 <style scoped>
 #navbar {
 	position: fixed;
+	z-index: 999;
 	top: 0;
 	left: 0;
 
@@ -28,7 +29,7 @@ export default {
 	flex-flow: row nowrap;
 
 	width: 100vw;
-	height: 5rem;
+	height: 4rem;
 	padding: 1rem;
 
 	align-items: center;
@@ -47,23 +48,24 @@ export default {
 
 	content: '';
 
-	opacity: 0.65;
+	opacity: 0.75;
 	background: #000000;
 }
 
 #navbar > .logo {
-	height: 100%;
 	display: block;
+
+	height: 100%;
 	margin-right: 2rem;
 }
 
 #navbar > nav {
+	font-size: 1rem;
+
 	color: var(--txt-light, #ffffff);
 }
 
 #navbar > nav > a {
-	font-size: 1rem;
-
 	padding: 0.5rem 1rem;
 
 	transition: color 0.3s;

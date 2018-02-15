@@ -1,51 +1,104 @@
 :root {
-	--accent: #ff6b00;
+	--accent: #ff6600;
+	--accent-strong: #e04605;
+	--accent-light: #ffa53c;
+
+	--detail: #f1606f;
+
+	--accent-gradient: linear-gradient(45deg, var(--accent-light) 0%, var(--detail) 100%);
+
 	--dark: #222222;
-	--light: #dae1e9;
+	--medium: #6c747c;
+	--light: #ecf0f3;
 
 	--txt-dark: #222222;
-	--txt-light: #dae1e9;
+	--txt-light: #eff2f5;
 }
 
 @font-face {
 	font-family: 'Panton';
+	font-weight: bold;
+
 	src: url('../fonts/Panton/Panton-BlackCaps.otf');
-	font-weight: bold;
 }
 
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
 	font-weight: normal;
+
+	src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
 }
 
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans/OpenSans-ExtraBold.ttf');
 	font-weight: bold;
+
+	src: url('../fonts/OpenSans/OpenSans-ExtraBold.ttf');
 }
 
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans/OpenSans-Light.ttf');
 	font-weight: lighter;
+
+	src: url('../fonts/OpenSans/OpenSans-Light.ttf');
 }
 
-html,
-body {
+html, body {
 	margin: 0;
 	padding: 0;
 }
 
 body {
+	font-family: 'Open Sans';
 	font-size: 14px;
 
 	background: var(--dark);
+}
+
+h1 {
+	font-family: 'Panton';
+}
+
+h2, h3, h4, h5 {
 	font-family: 'Open Sans';
+	font-weight: bold;
+}
+
+a {
+	color: var(--detail);
+	transition: color 0.3s;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--accent);
 }
 
 img {
 	max-width: 100%;
 	height: auto;
 	max-height: 100%;
+}
+
+.btn {
+	display: inline-block;
+
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0.75rem 2rem;
+
+	border-radius: 2px;
+}
+
+.btn-gradient {
+	font-weight: bold;
+
+	text-decoration: none;
+
+	color: var(--txt-light);
+	background: var(--accent-gradient);
+}
+
+.btn-gradient:hover, .btn-gradient:focus {
+	color: var(--txt-light);
 }
