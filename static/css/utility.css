@@ -1,0 +1,288 @@
+/* These are a collection of generic utility classes, it is prefferred that we use these before we decide to create an entire custom class to maintain reusability */
+
+/* Display */
+
+.display--inline-block {
+	display: inline-block;
+}
+
+.display--inline {
+	display: inline;
+}
+
+.display--block {
+	display: block;
+}
+
+.display--flex {
+	display: flex;
+}
+
+/* Flex */
+
+.flex_direction--row {
+	flex-direction: row;
+}
+
+.flex_direction--column {
+	flex-direction: column;
+}
+
+.flex_wrap--wrap {
+	flex-wrap: wrap;
+}
+
+.flex_wrap--no-wrap {
+	flex-wrap: nowrap;
+}
+
+.flex_grow--grow {
+	flex-grow: 1;
+}
+
+.flex_grow--not-grow {
+	flex-grow: 0;
+}
+
+.flex_shrink--shrink {
+	flex-grow: 1;
+}
+
+.flex_shrink--not-shrink {
+	flex-shrink: 0;
+}
+
+/* Flex alignment */
+
+.flex_align--center {
+	align-items: center;
+	justify-content: center;
+}
+
+.align_items--center {
+	align-items: center;
+}
+
+.align_items--stretch {
+	align-items: stretch;
+}
+
+.align_items--flex-start {
+	align-items: flex-start;
+}
+
+.align_items--flex-end {
+	align-items: flex-end;
+}
+
+.justify_content--center {
+	justify-content: center;
+}
+
+.justify_content--flex-start {
+	justify-content: flex-start;
+}
+
+.justify_content--flex-end {
+	justify-content: flex-end;
+}
+
+/* Position */
+
+.position--relative {
+	position: relative;
+}
+
+.position--absolute {
+	position: absolute;
+}
+
+.position--fixed {
+	position: fixed;
+}
+
+.position--top-left {
+	top: 0;
+	right: auto;
+	bottom: auto;
+	left: 0;
+}
+
+.position--bottom-left {
+	top: auto;
+	right: auto;
+	bottom: 0;
+	left: 0;
+}
+
+.position--top-right {
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: auto;
+}
+
+.position--bottom-right {
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: auto;
+}
+
+.position--center {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* Overflow and visibility */
+
+.overflow--hidden {
+	overflow: hidden;
+}
+
+.overflow--visible {
+	overflow: visible;
+}
+
+.overflow--scroll {
+	overflow: scroll;
+}
+
+.overflow--auto {
+	overflow: auto;
+}
+
+.object_fit--cover {
+	object-fit: cover;
+}
+
+.object_fit--contain {
+	object-fit: contain;
+}
+
+.object_fit--fill {
+	object-fit: fill;
+}
+
+/* Sizes */
+
+.size--fill-viewport {
+	width: 100vw;
+	height: 100vh;
+}
+
+.size--fill-parent {
+	width: 100%;
+	height: 100%;
+}
+
+.height--viewport {
+	height: 100vh;
+}
+
+.width--viewport {
+	width: 100vw;
+}
+
+.height--parent {
+	height: 100%;
+}
+
+.width--parent {
+	width: 100%;
+}
+
+/* Text colors */
+
+.text_color--dark {
+	color: var(--txt-dark);
+}
+
+.text_color--medium {
+	color: var(--txt-medium);
+}
+
+.text_color--light {
+	color: var(--txt-light);
+}
+
+.text_color--accent {
+	color: var(--accent);
+}
+
+.text_color--hint {
+	color: var(--hint);
+}
+
+.onHover-text_color--light:hover {
+	color: var(--txt-light);
+}
+
+.onHover-text_color--accent:hover {
+	color: var(--accent);
+}
+
+.onHover-text_color--hint:hover {
+	color: var(--hint);
+}
+
+/* Text alignment */
+
+.text_align--center {
+	text-align: center;
+}
+
+.text_align--left {
+	text-align: left;
+}
+
+.text_align--right {
+	text-align: right;
+}
+
+/* Backgrounds */
+
+.background_color--dark {
+	background: var(--dark);
+}
+
+.background_color--medium {
+	background: var(--medium);
+}
+
+.background_color--light {
+	background: var(--light);
+}
+
+.background_color--gradient {
+	background: linear-gradient(45deg, var(--accent-light) 0%, var(--hint) 100%);
+}
+
+/* Font styles */
+
+.font_family--title {
+	font-family: 'Panton';
+}
+
+.font_family--subtitle {
+	font-family: 'Open Sans';
+	font-weight: bold;
+}
+
+.font_family--regular {
+	font-family: 'Open Sans';
+}
+
+.font_weight--normal {
+	font-weight: normal;
+}
+
+.font_weight--bold {
+	font-weight: bold;
+}
+
+.font_weight--lighter {
+	font-weight: lighter;
+}

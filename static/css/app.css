@@ -1,19 +1,4 @@
-:root {
-	--accent: #ff6600;
-	--accent-strong: #e04605;
-	--accent-light: #ffa53c;
-
-	--detail: #f1606f;
-
-	--accent-gradient: linear-gradient(45deg, var(--accent-light) 0%, var(--detail) 100%);
-
-	--dark: #222222;
-	--medium: #6c747c;
-	--light: #ecf0f3;
-
-	--txt-dark: #222222;
-	--txt-light: #eff2f5;
-}
+/* Typographies */
 
 @font-face {
 	font-family: 'Panton';
@@ -43,16 +28,15 @@
 	src: url('../fonts/OpenSans/OpenSans-Light.ttf');
 }
 
+/* These are the base styles for the entire site, only extremely important classes or styles should go here */
+
 html, body {
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	font-family: 'Open Sans';
 	font-size: 14px;
-
-	background: var(--dark);
 }
 
 h1 {
@@ -88,17 +72,4 @@ img {
 	padding: 0.75rem 2rem;
 
 	border-radius: 2px;
-}
-
-.btn-gradient {
-	font-weight: bold;
-
-	text-decoration: none;
-
-	color: var(--txt-light);
-	background: var(--accent-gradient);
-}
-
-.btn-gradient:hover, .btn-gradient:focus {
-	color: var(--txt-light);
 }

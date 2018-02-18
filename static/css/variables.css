@@ -1,0 +1,17 @@
+/* CSS native variables for the entire site */
+
+:root {
+	--accent: #ff6600;
+	--accent-light: #ffa53c;
+	--hint: #f1606f;
+
+	--gradient: linear-gradient(45deg, var(--accent-light) 0%, var(--hint) 100%);
+
+	--dark: #222222;
+	--medium: #6c747c;
+	--light: #f2f2f3;
+
+	--txt-dark: #222222;
+	--txt-medium: #747d85;
+	--txt-light: #eff2f5;
+}

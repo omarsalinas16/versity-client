@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" class="display--flex flex_direction--column flex_wrap--no-wrap">
 		<nav-bar/>
 		<router-view/>
 		<footer-bar></footer-bar>
@@ -18,17 +18,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-#app {
-	display: flex;
-	flex-flow: column nowrap;
-
-	min-height: 100vh;
-}
-
-#app main {
-	flex: 1 1 100%;
-}
-
-</style>
