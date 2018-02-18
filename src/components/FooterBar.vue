@@ -32,6 +32,26 @@
 				</div>
 				<div class="three columns">
 					<h3>Contacto</h3>
+					<div class="container">
+						<div class="row">
+							<div class="six columns">
+								<a href="">test</a>
+							</div>
+							<div class="six columns">
+								<a href="">test</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="six columns">
+								<a href="">test</a>
+							</div>
+							<div class="six columns">
+								<a href="">test</a>
+							</div>
+						</div>
+					</div>
+
+					<a href="">Envianos tus comentarios</a>
 				</div>
 			</div>
 			<div class="copy">

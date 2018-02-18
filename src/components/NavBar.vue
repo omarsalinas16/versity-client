@@ -22,7 +22,7 @@ export default {
 	z-index: 999;
 
 	height: 4rem;
-	padding: 1rem;
+	padding: 1rem 2rem;
 }
 
 #navbar::before {
@@ -56,7 +56,7 @@ export default {
 #navbar > nav > a {
 	padding: 0.5rem 1rem;
 
-	transition: color 0.3s;
+	transition: color 200ms;
 
 	color: inherit;
 }

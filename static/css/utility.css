@@ -18,6 +18,10 @@
 	display: flex;
 }
 
+.display--grid {
+	display: grid;
+}
+
 /* Flex */
 
 .flex_direction--row {
@@ -85,6 +89,14 @@
 
 .justify_content--flex-end {
 	justify-content: flex-end;
+}
+
+.justify_content--space-around {
+	justify-content: space-around;
+}
+
+.justify_content--space-between {
+	justify-content: space-between;
 }
 
 /* Position */
@@ -192,6 +204,16 @@
 
 .width--parent {
 	width: 100%;
+}
+
+/* Margin and padding */
+
+.margin--all-none {
+	margin: 0;
+}
+
+.padding--all-none {
+	padding: 0;
 }
 
 /* Text colors */

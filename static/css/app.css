@@ -48,28 +48,54 @@ h2, h3, h4, h5 {
 	font-weight: bold;
 }
 
-a {
-	color: var(--detail);
-	transition: color 0.3s;
-	text-decoration: none;
-}
-
-a:hover {
-	color: var(--accent);
-}
-
 img {
 	max-width: 100%;
 	height: auto;
 	max-height: 100%;
 }
 
-.btn {
+a {
+	transition: color 200ms;
+	text-decoration: none;
+
+	color: var(--detail);
+}
+
+a, button {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+button {
+	white-space: nowrap;
+}
+
+button, .btn {
 	display: inline-block;
 
 	margin: 0;
 	margin-bottom: 1rem;
 	padding: 0.75rem 2rem;
 
+	text-align: center;
+
+	border: none;
 	border-radius: 2px;
+	background-color: transparent;
+}
+
+button.btn {
+	font-weight: bold;
+}
+
+.btn.btn_border--dark {
+	border: 1px solid var(--dark);
+}
+
+.btn.btn_border--medium {
+	border: 1px solid var(--medium);
+}
+
+.btn.btn_border--light {
+	border: 1px solid var(--light);
 }

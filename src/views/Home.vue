@@ -13,14 +13,31 @@
 			</div>
 		</div>
 
-		<!-- Filler div to test some styles, remove after -->
-		<div class="height--viewport"></div>
+		<div class="courses background_color--light">
+			<div class="container">
+				<div class="row text_align--center">
+					<h2>Disfruta de una gran colección de temas diferentes, gratis</h2>
+					<p>Descubre nuevos hobbies, aprende exactamente lo que buscas y cuando quieras</p>
+				</div>
+				<div class="display--flex flex_direction--row flex_wrap--no-wrap justify_content--center">
+					<button v-for="n in 5" :key="n" href="" class="btn text_color--hint">Sample Text</button>
+				</div>
+				<div class="course-grid row display--grid justify_content--center">
+					<course-tile v-for="n in 8" :key="n"></course-tile>
+				</div>
+			</div>
+		</div>
 	</main>
 </template>
 
 <script>
+import CourseTile from '@/components/home/CourseTile'
+
 export default {
-	name: 'Home'
+	name: 'Home',
+	components: {
+		CourseTile
+	}
 }
 </script>
 
@@ -43,6 +60,15 @@ export default {
 
 #home > .persona > .hero-container > .hero > p {
 	font-size: 1.25rem;
+}
+
+#home > .courses > .container {
+	padding: 1rem;
+}
+
+#home > .courses .course-grid {
+	grid-template-columns: repeat(auto-fill, minmax(auto, 210px));
+	grid-gap: 2rem 1rem;
 }
 
 </style>
