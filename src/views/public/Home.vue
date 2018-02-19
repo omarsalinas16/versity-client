@@ -1,7 +1,7 @@
 <template>
 	<main id="home">
 		<div class="persona position--relative overflow--hidden">
-			<img src="@/assets/persona_banner.jpg" alt="Home page banner" class="banner position--absolute position--center object_fit--cover size--fill-parent"/>
+			<img src="@/assets/img/persona_banner.jpg" alt="Home page banner" class="banner position--absolute position--center object_fit--cover size--fill-parent"/>
 
 			<div class="hero-container position--relative display--flex flex_direction--row flex_wrap--no-wrap flex_align--center size--fill-parent">
 				<div class="hero container text_align--center text_color--light">

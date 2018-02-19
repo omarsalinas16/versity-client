@@ -1,19 +1,33 @@
 <template>
-	<div id="navbar" class="position--fixed position--top-left display--flex flex_direction--row flex_wrap--no-wrap width--viewport align_items--center">
-		<router-link to="/" class="logo">
-			<img src="@/assets/logo.png" alt="Versity logo">
-		</router-link>
+	<div id="navbar" class="position--fixed position--top-left flex--row-no-wrap width--viewport align_items--center">
+		<a href="/" class="logo"><img src="@/assets/img/logo.png" alt="Versity logo"></a>
+
+		<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search input-icon margin--all-none background_color--dark border--medium onFocus-border--hint text_color--light" placeholder="Busca cursos!">
+
 		<nav class="text_color--light">
-			<router-link to="/about">Acerca de</router-link>
-			<router-link to="/bussiness">Afiliados</router-link>
-			<router-link to="/personal">Personal</router-link>
+			<a href="/about">Acerca de</a>
+			<a href="/bussiness">Afiliados</a>
+			<a href="/personal">Personal</a>
 		</nav>
+
+		
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'NavBar'
+	name: 'NavBar',
+	data() {
+		return {
+			search: ''
+		}
+	},
+	methods: {
+		onSearch() {
+			console.log('search')
+			this.$router.push({ path: 'courses', query: { keywords: this.search }})
+		}
+	}
 }
 </script>
 
@@ -23,23 +37,8 @@ export default {
 
 	height: 4rem;
 	padding: 1rem 2rem;
-}
 
-#navbar::before {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-
-	display: block;
-
-	width: 100%;
-	height: 100%;
-
-	content: '';
-
-	opacity: 0.75;
-	background: #000000;
+	background: rgba(33, 33, 33, 0.9);
 }
 
 #navbar > .logo {
@@ -49,8 +48,14 @@ export default {
 	margin-right: 2rem;
 }
 
+#navbar > .search {
+	background-image: url('../assets/svg/search_icon.svg');
+}
+
 #navbar > nav {
 	font-size: 1rem;
+
+	margin-left: auto;
 }
 
 #navbar > nav > a {

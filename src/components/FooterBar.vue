@@ -32,26 +32,22 @@
 				</div>
 				<div class="three columns">
 					<h3>Contacto</h3>
-					<div class="container">
+					<div class="contact-social container">
 						<div class="row">
-							<div class="six columns">
-								<a href="">test</a>
+							<div class="three columns">
+								<a href=""><twitter-icon/></a>
 							</div>
-							<div class="six columns">
-								<a href="">test</a>
+							<div class="three columns">
+								<a href=""><facebook-icon/></a>
 							</div>
-						</div>
-						<div class="row">
-							<div class="six columns">
-								<a href="">test</a>
+							<div class="three columns">
+								<a href=""><youtube-play-icon/></a>
 							</div>
-							<div class="six columns">
-								<a href="">test</a>
+							<div class="three columns">
+								<a href=""><email-icon/></a>
 							</div>
 						</div>
 					</div>
-
-					<a href="">Envianos tus comentarios</a>
 				</div>
 			</div>
 			<div class="copy">
@@ -62,8 +58,19 @@
 </template>
 
 <script>
+import TwitterIcon from 'vue-material-design-icons/twitter.vue'
+import FacebookIcon from 'vue-material-design-icons/facebook.vue'
+import YoutubePlayIcon from 'vue-material-design-icons/youtube-play.vue'
+import EmailIcon from 'vue-material-design-icons/email.vue'
+
 export default {
-	name: 'FooterBar'
+	name: 'FooterBar',
+	components: {
+		TwitterIcon,
+		FacebookIcon,
+		YoutubePlayIcon,
+		EmailIcon,
+	}
 }
 </script>
 
@@ -72,24 +79,28 @@ export default {
 	margin: 4rem 0 0;
 }
 
-#footer > .footer-container {
+#footer .footer-container {
 	padding: 3rem 0 4rem;
 }
 
-#footer > .footer-container > .links .link-list {
+#footer .footer-container .links .link-list {
 	list-style: none;
 }
 
-#footer > .footer-container > .links .link-list > li {
+#footer .footer-container .links .link-list li {
 	margin-bottom: 0.5rem;
 }
 
-#footer > .footer-container > .links .link-list a {
+#footer .footer-container .links .link-list a {
 	color: inherit;
 }
 
-#footer > .footer-container > .links .link-list a:hover {
+#footer .footer-container .links .link-list a:hover {
 	color: var(--txt-dark);
+}
+
+#footer .contact-social {
+	margin-bottom: 2rem;
 }
 
 </style>

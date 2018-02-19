@@ -80,7 +80,7 @@ button, .btn {
 	text-align: center;
 
 	border: none;
-	border-radius: 2px;
+	border-radius: 3px;
 	background-color: transparent;
 }
 
@@ -88,14 +88,20 @@ button.btn {
 	font-weight: bold;
 }
 
-.btn.btn_border--dark {
-	border: 1px solid var(--dark);
+input, textarea, select {
+	padding: 0.5rem 1rem;
+
+	transition: background 200ms, border-color 200ms;
+
+	border: none;
+	border-radius: 3px;
+	background: var(--light);
 }
 
-.btn.btn_border--medium {
-	border: 1px solid var(--medium);
-}
+input.input-icon {
+	padding-left: 2.5rem;
 
-.btn.btn_border--light {
-	border: 1px solid var(--light);
+	background-repeat: no-repeat;
+	background-position: 3px calc(36px - 2rem);
+	background-size: 2rem 2rem;
 }
