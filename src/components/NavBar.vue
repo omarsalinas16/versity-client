@@ -1,16 +1,14 @@
 <template>
 	<div id="navbar" class="position--fixed position--top-left flex--row-no-wrap width--viewport align_items--center">
-		<a href="/" class="logo"><img src="@/assets/img/logo.png" alt="Versity logo"></a>
+		<router-link to="/" class="logo"><img src="@/assets/img/logo.png" alt="Versity logo"></router-link>
 
 		<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search input-icon margin--all-none background_color--dark border--medium onFocus-border--hint text_color--light" placeholder="Busca cursos!">
 
 		<nav class="text_color--light">
-			<a href="/about">Acerca de</a>
-			<a href="/bussiness">Afiliados</a>
-			<a href="/personal">Personal</a>
+			<router-link to="/about">Acerca de</router-link>
+			<router-link to="/bussiness">Afiliados</router-link>
+			<router-link to="/personal">Personal</router-link>
 		</nav>
-
-		
 	</div>
 </template>
 

@@ -1,15 +1,15 @@
 <template>
 	<div class="course-tile">
-		<a :href="url">
+		<router-link :to="url">
 			<img :src="thumbnailPath" alt="" class="display--block object_fit--cover">
-		</a>
+		</router-link>
 		<div class="info display--flex flex_direction--row flex_wrap--no-wrap justify_content--space-between text_color--medium">
 			<p v-if="studentsCount" class="margin--all-none">{{ formattedStudents }} estudiantes</p>
 			<p v-if="duration" class="margin--all-none">{{ formattedDuration }}</p>
 		</div>
 		<div class="details text_color--dark">
-			<a :href="url" class="title display--block font_weight--bold onHover-text_color--medium">{{ title }}</a>
-			<a :href="authorUrl" class="author margin--all-none onHover-text_color--hint">{{ author }}</a>
+			<router-link :to="url" class="title display--block font_weight--bold onHover-text_color--medium">{{ title }}</router-link>
+			<router-link :to="authorUrl" class="author margin--all-none onHover-text_color--hint">{{ author }}</router-link>
 		</div>
 	</div>
 </template>

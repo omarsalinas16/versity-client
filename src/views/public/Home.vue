@@ -5,7 +5,7 @@
 				<h1>Encuentra tu camino</h1>
 				<p>Miles de cursos por descubir,<br>miles de cosas por aprender</p>
 				
-				<a href="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Empieza hoy</a>
+				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Empieza hoy</router-link>
 			</div>
 		</div>
 
@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="six columns">
 						<h2 class="font_weight--normal">Obtén acceso a cursos especiales,<br/>elimina la publicidad<br/> y más</h2>
-						<a href="" class="premium-btn btn border--hint onHover-background_color--hint">Sé premium</a>
+						<router-link to="" class="premium-btn btn border--hint onHover-background_color--hint">Sé premium</router-link>
 					</div>
 					<div class="six columns">
 
@@ -68,7 +68,7 @@
 				<h1>Sé un instructor afiliado</h1>
 				<h2 class="font_weight--normal">Gana dinero. Comparte tu conocimiento. Ayuda a la comunidad</h2>
 
-				<a href="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Más información</a>
+				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Más información</router-link>
 			</div>
 		</div>
 
@@ -77,7 +77,7 @@
 
 			<div class="container padding--all-unit">
 				<h3 class="display--inline-block margin--all-none font_weight--normal">Desafia tus habilidades. Aprende algo nuevo. Consigue ayuda.</h3>
-				<a class="btn small display--inline-block background_color--accent">Sign In</a>
+				<router-link to="/signup" class="btn small display--inline-block background_color--accent">Sign In</router-link>
 			</div>
 		</div>
 		
@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import CourseTile from '@/components/home/CourseTile'
+const CourseTile = () => import('@/components/home/CourseTile')
 
 export default {
 	name: 'Home',

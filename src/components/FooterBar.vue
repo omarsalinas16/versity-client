@@ -5,29 +5,29 @@
 				<div class="three columns">
 					<h3>Versity</h3>
 					<ul class="link-list">
-						<li><a href="">Acerca de</a></li>
-						<li><a href="">Afiliados</a></li>
-						<li><a href="">Personal</a></li>
-						<li><a href="">Blog</a></li>
-						<li><a href="">Empleo</a></li>
+						<li><router-link to="/about">Acerca de</router-link></li>
+						<li><router-link to="/instructors">Instructores</router-link></li>
+						<li><router-link to="/community">Personal</router-link></li>
+						<li><router-link to="">Blog</router-link></li>
+						<li><router-link to="">Empleo</router-link></li>
 					</ul>
 				</div>
 				<div class="three columns">
 					<h3>Comunidad</h3>
 					<ul class="link-list">
-						<li><a href="">Premium</a></li>
-						<li><a href="">Planes empresariales</a></li>
-						<li><a href="">Planes academicos</a></li>
-						<li><a href="">Clases gratuitas</a></li>
+						<li><router-link to="/premium">Premium</router-link></li>
+						<li><router-link to="">Planes empresariales</router-link></li>
+						<li><router-link to="">Planes academicos</router-link></li>
+						<li><router-link to="/courses">Clases gratuitas</router-link></li>
 					</ul>
 				</div>
 				<div class="three columns">
 					<h3>Instructores</h3>
 					<ul class="link-list">
-						<li><a href="">Sé un profesor</a></li>
-						<li><a href="">Academia de profesores</a></li>
-						<li><a href="">Material academico</a></li>
-						<li><a href="">Afiliaciones</a></li>
+						<li><router-link to="/instructors">Sé un profesor</router-link></li>
+						<li><router-link to="">Academia de profesores</router-link></li>
+						<li><router-link to="">Material academico</router-link></li>
+						<li><router-link to="">Afiliaciones</router-link></li>
 					</ul>
 				</div>
 				<div class="three columns">
@@ -35,16 +35,16 @@
 					<div class="contact-social container">
 						<div class="row">
 							<div class="three columns">
-								<a href=""><twitter-icon/></a>
+								<a href="http://www.twitter.com/" target="_blank"><twitter-icon/></a>
 							</div>
 							<div class="three columns">
-								<a href=""><facebook-icon/></a>
+								<a href="http://www.facebook.com/" target="_blank"><facebook-icon/></a>
 							</div>
 							<div class="three columns">
-								<a href=""><youtube-play-icon/></a>
+								<a href="http://www.youtube.com/" target="_blank"><youtube-play-icon/></a>
 							</div>
 							<div class="three columns">
-								<a href=""><email-icon/></a>
+								<a href="mailto:contact@versity.mx" target="_blank"><email-icon/></a>
 							</div>
 						</div>
 					</div>
@@ -58,10 +58,10 @@
 </template>
 
 <script>
-import TwitterIcon from 'vue-material-design-icons/twitter.vue'
-import FacebookIcon from 'vue-material-design-icons/facebook.vue'
-import YoutubePlayIcon from 'vue-material-design-icons/youtube-play.vue'
-import EmailIcon from 'vue-material-design-icons/email.vue'
+const TwitterIcon = () => import('vue-material-design-icons/twitter.vue')
+const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
+const YoutubePlayIcon = () => import('vue-material-design-icons/youtube-play.vue')
+const EmailIcon = () => import('vue-material-design-icons/email.vue')
 
 export default {
 	name: 'FooterBar',

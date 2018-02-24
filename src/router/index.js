@@ -1,29 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Public from '@/views/public/Public'
-import Home from '@/views/public/Home'
+const Home = () => import('@/views/public/Home')
+const SignUp = () => import('@/views/public/SignUp')
+const About = () => import('@/views/public/About')
 
 Vue.use(Router)
 
 export default new Router({
 	mode: 'history',
 	routes: [
-		{
-			path: '/',
-			exact: true,
-			redirect: '/public'
-		},
-		{
-			path: '/public',
-			component: Public,
-			children: [
-				{
-					path: '/',
-					name: 'Home',
-					component: Home
-				}
-			]
-		}
+		{ path: '/', name: 'home', component: Home },
+		{ path: '/signup', name: 'signup', component: SignUp },
+		{ path: '/about', name: 'about', component: About }
 	]
 })
