@@ -12,7 +12,10 @@ export default new Router({
 		{
 			path: '/',
 			exact: true,
-			name: 'Public',
+			redirect: '/public'
+		},
+		{
+			path: '/public',
 			component: Public,
 			children: [
 				{

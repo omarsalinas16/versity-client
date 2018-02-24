@@ -8,8 +8,8 @@
 			<p v-if="duration" class="margin--all-none">{{ formattedDuration }}</p>
 		</div>
 		<div class="details text_color--dark">
-			<a :href="url" class="title display--block font_weight--bold">{{ title }}</a>
-			<a :href="authorUrl" class="author margin--all-none">{{ author }}</a>
+			<a :href="url" class="title display--block font_weight--bold onHover-text_color--medium">{{ title }}</a>
+			<a :href="authorUrl" class="author margin--all-none onHover-text_color--hint">{{ author }}</a>
 		</div>
 	</div>
 </template>

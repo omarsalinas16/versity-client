@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<div class="copy">
-
+				Copyright &copy; 2018 Versity LLC. Todos los derechos reservados.
 			</div>
 		</div>
 	</footer>
@@ -75,10 +75,6 @@ export default {
 </script>
 
 <style scoped>
-#footer {
-	margin: 4rem 0 0;
-}
-
 #footer .footer-container {
 	padding: 3rem 0 4rem;
 }
@@ -101,6 +97,12 @@ export default {
 
 #footer .contact-social {
 	margin-bottom: 2rem;
+}
+
+#footer .copy {
+	padding-top: 1.5rem;
+
+	border-top: 1px solid #dfdfdf;
 }
 
 </style>
