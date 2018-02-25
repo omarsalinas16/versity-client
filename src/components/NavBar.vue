@@ -1,10 +1,10 @@
 <template>
-	<div id="navbar" class="position--fixed position--top-left flex--row-no-wrap width--viewport align_items--center">
-		<router-link to="/" class="logo"><img src="@/assets/img/logo.png" alt="Versity logo"></router-link>
+	<div id="navbar" class="position--fixed position--top-left flex--row-no-wrap width--viewport align_items--center padding--v-one padding--h-two">
+		<router-link to="/" class="logo margin_right--two"><img src="@/assets/img/logo.png" alt="Versity logo"></router-link>
 
 		<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search input-icon margin--all-none background_color--dark border--medium onFocus-border--hint text_color--light" placeholder="Busca cursos!">
 
-		<nav class="text_color--light">
+		<nav class="margin_left--auto text_color--light">
 			<router-link to="/about">Acerca de</router-link>
 			<router-link to="/bussiness">Afiliados</router-link>
 			<router-link to="/personal">Personal</router-link>
@@ -34,7 +34,6 @@ export default {
 	z-index: 999;
 
 	height: 4rem;
-	padding: 1rem 2rem;
 
 	background: rgba(33, 33, 33, 0.9);
 }
@@ -43,7 +42,6 @@ export default {
 	display: block;
 
 	height: 100%;
-	margin-right: 2rem;
 }
 
 #navbar > .search {
@@ -52,8 +50,6 @@ export default {
 
 #navbar > nav {
 	font-size: 1rem;
-
-	margin-left: auto;
 }
 
 #navbar > nav > a {

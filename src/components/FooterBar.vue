@@ -1,8 +1,8 @@
 <template>
 	<footer id="footer" class="background_color--light text_color--medium">
-		<div class="footer-container container">
-			<div class="links row">
-				<div class="three columns">
+		<div class="footer-container grid-container">
+			<div class="links grid-x">
+				<div class="cell small-6 medium-3">
 					<h3>Versity</h3>
 					<ul class="link-list">
 						<li><router-link to="/about">Acerca de</router-link></li>
@@ -12,7 +12,7 @@
 						<li><router-link to="">Empleo</router-link></li>
 					</ul>
 				</div>
-				<div class="three columns">
+				<div class="cell small-6 medium-3">
 					<h3>Comunidad</h3>
 					<ul class="link-list">
 						<li><router-link to="/premium">Premium</router-link></li>
@@ -21,7 +21,7 @@
 						<li><router-link to="/courses">Clases gratuitas</router-link></li>
 					</ul>
 				</div>
-				<div class="three columns">
+				<div class="cell small-6 medium-3">
 					<h3>Instructores</h3>
 					<ul class="link-list">
 						<li><router-link to="/instructors">Sé un profesor</router-link></li>
@@ -30,22 +30,20 @@
 						<li><router-link to="">Afiliaciones</router-link></li>
 					</ul>
 				</div>
-				<div class="three columns">
+				<div class="contact-social margin_bottom--two cell small-6 medium-3">
 					<h3>Contacto</h3>
-					<div class="contact-social container">
-						<div class="row">
-							<div class="three columns">
-								<a href="http://www.twitter.com/" target="_blank"><twitter-icon/></a>
-							</div>
-							<div class="three columns">
-								<a href="http://www.facebook.com/" target="_blank"><facebook-icon/></a>
-							</div>
-							<div class="three columns">
-								<a href="http://www.youtube.com/" target="_blank"><youtube-play-icon/></a>
-							</div>
-							<div class="three columns">
-								<a href="mailto:contact@versity.mx" target="_blank"><email-icon/></a>
-							</div>
+					<div class="grid-x grid-padding-x small-up-2">
+						<div class="cell">
+							<a href="http://www.twitter.com/" target="_blank" class="display--block"><twitter-icon/></a>
+						</div>
+						<div class="cell">
+							<a href="http://www.facebook.com/" target="_blank" class="display--block"><facebook-icon/></a>
+						</div>
+						<div class="cell">
+							<a href="http://www.youtube.com/" target="_blank" class="display--block"><youtube-play-icon/></a>
+						</div>
+						<div class="cell">
+							<a href="mailto:contact@versity.mx" target="_blank" class="display--block"><email-icon/></a>
 						</div>
 					</div>
 				</div>
@@ -76,7 +74,7 @@ export default {
 
 <style scoped>
 #footer .footer-container {
-	padding: 3rem 0 4rem;
+	padding: 3rem 1rem 4rem;
 }
 
 #footer .footer-container .links .link-list {
@@ -95,8 +93,10 @@ export default {
 	color: var(--txt-dark);
 }
 
-#footer .contact-social {
-	margin-bottom: 2rem;
+#footer .contact-social a {
+	width: 24px;
+	height: 24px;
+	margin-bottom: 0.5rem;
 }
 
 #footer .copy {
@@ -104,5 +104,6 @@ export default {
 
 	border-top: 1px solid #dfdfdf;
 }
+
 
 </style>
