@@ -32,7 +32,7 @@
 				</div>
 				<div class="contact-social margin_bottom--two cell small-6 medium-3">
 					<h3>Contacto</h3>
-					<div class="grid-x grid-padding-x small-up-2">
+					<div class="grid-x grid-padding-x small-up-2 medium-up-4">
 						<div class="cell">
 							<a href="http://www.twitter.com/" target="_blank" class="display--block"><twitter-icon/></a>
 						</div>

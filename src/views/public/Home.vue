@@ -1,45 +1,43 @@
 <template>
 	<main id="home">
-		<div class="persona page-hero-height background_size--cover background_repeat--no-repeat container_flex--center flex_direction--row">
+		<section class="persona page-hero-height background_size--cover background_repeat--no-repeat container_flex--center flex_direction--row">
 			<div class="hero padding--all-one text_align--center text_color--light">
 				<h1>Encuentra tu camino</h1>
 				<p>Miles de cursos por descubir,<br>miles de cosas por aprender</p>
 				
 				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Empieza hoy</router-link>
 			</div>
-		</div>
+		</section>
 
-		<div class="courses background_color--light">
+		<section class="courses background_color--light">
 			<div class="courses-container grid-container padding--all-one">
 				<div class="text_align--center">
 					<h2>Disfruta de una gran colección de temas diferentes, gratis</h2>
 					<p>Descubre nuevos hobbies, aprende exactamente lo que buscas y cuando quieras</p>
 				</div>
-				<div class="course-categories margin_botton--one display--flex flex_direction--row flex_wrap--no-wrap">
-					<button v-for="n in 6" :key="n" href="" class="btn margin--all-none text_color--hint">Sample Text</button>
+				<div class="course-categories margin_bottom--one flex--row-no-wrap justify_content--center">
+					<button v-for="(c, i) in courseCategories" :key="i" @click="onCategoryClicked(c.keyword, $event)" :keyword="c.keyword" class="btn margin--all-none text_color--hint">{{ c.name }}</button>
 				</div>
 				<div class="course-grid row display--grid justify_content--center" is="transition-group" name="fade">
 						<course-tile v-for="n in 8" :key="n"></course-tile>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="premium-banner background_color--dark text_color--light">
+		<section class="premium-banner background_color--dark text_color--light">
 			<span class="highlight-bar"></span>
-			<div class="grid-container padding--v-two padding-h-one">
+			<div class="grid-container">
 				<div class="grid-x">
-					<div class="cell small-12 medium-6">
+					<div class="cell small-12 medium-6 padding--v-two padding-h-one">
 						<h2 class="font_weight--normal">Obtén acceso a cursos especiales,<br/>elimina la publicidad<br/> y más</h2>
 						<router-link to="" class="premium-btn btn margin_top--two border--hint onHover-background_color--hint">Sé premium</router-link>
 					</div>
-					<div class="cell small-12 medium-6">
-
-					</div>
+					<div class="premium-banner-img cell small-12 medium-6 background_size--cover background_repeat--no-repeat"></div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="why-us background_color--light text_align--center">
+		<section class="why-us background_color--light text_align--center">
 			<div class="grid-container padding--v-two padding-h-one">
 				<h2 class="margin_bottom--two">Por qué Versity?</h2>
 				
@@ -61,25 +59,25 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="teachers container_flex--center flex_direction--row background_size--cover background_repeat--no-repeat text_color--light text_align--center">
+		<section class="teachers container_flex--center flex_direction--row background_size--cover background_repeat--no-repeat text_color--light text_align--center">
 			<div class="padding--all-one">
 				<h1>Sé un instructor afiliado</h1>
 				<h2 class="font_weight--normal">Gana dinero. Comparte tu conocimiento. Ayuda a la comunidad</h2>
 
 				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Más información</router-link>
 			</div>
-		</div>
+		</section>
 
-		<div class="sign-remind background_color--dark text_color--light text_align--center">
+		<section class="sign-remind background_color--dark text_color--light text_align--center">
 			<span class="highlight-bar"></span>
 
 			<div class="padding--all-one">
 				<h3 class="display--inline-block margin--all-none margin_right--one font_weight--normal">Desafia tus habilidades. Aprende algo nuevo. Consigue ayuda.</h3>
-				<router-link to="/signup" class="btn small display--inline-block  margin--all-none background_color--accent">Sign In</router-link>
+				<router-link to="/signup" class="btn small display--inline-block  margin--all-none background_color--accent">Regístrate</router-link>
 			</div>
-		</div>
+		</section>
 		
 	</main>
 </template>
@@ -89,6 +87,21 @@ const CourseTile = () => import('@/components/home/CourseTile')
 
 export default {
 	name: 'Home',
+	data() {
+		return {
+			courseCategories: [
+				{ name: 'Software', keyword: 'software' },
+				{ name: 'Diseño', keyword: 'design' },
+				{ name: 'Matemáticas', keyword: 'maths' },
+				{ name: 'Química', keyword: 'chemistry' },
+			]
+		}
+	},
+	methods: {
+		onCategoryClicked(keyword, e) {
+			console.log(keyword)
+		}
+	},
 	components: {
 		CourseTile
 	}
@@ -119,6 +132,21 @@ export default {
 
 #home .premium-banner .premium-btn {
 	transition: background 200ms;
+}
+
+#home .premium-banner .premium-banner-img {
+	background-image: url('../../assets/img/premium_banner.jpg');
+}
+
+#home .premium-banner .premium-banner-img::before {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	content: '';
+
+	background: linear-gradient(to right, rgba(34, 34, 34, 1) 5%,rgba(34, 34, 34, 0) 35%,rgba(34, 34, 34, 0) 65%,rgba(34,34, 34, 1) 95%);
 }
 
 #home .teachers {

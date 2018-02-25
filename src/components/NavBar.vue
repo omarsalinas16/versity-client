@@ -9,6 +9,10 @@
 			<router-link to="/bussiness">Afiliados</router-link>
 			<router-link to="/personal">Personal</router-link>
 		</nav>
+
+		<div class="account text_color--light">
+			<router-link to="/signup" class="btn small margin--all-none background_color--accent">Registro</router-link>
+		</div>
 	</div>
 </template>
 
