@@ -9,7 +9,7 @@
 <script>
 import '@/assets/css/sanitize.css'
 
-import '@/assets/css/foundation.min.css'
+import '@/assets/css/foundation.css'
 
 import '@/assets/css/variables.css'
 import '@/assets/css/app.css'

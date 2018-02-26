@@ -3,7 +3,7 @@
 		<section class="persona page-hero-height background_size--cover background_repeat--no-repeat container_flex--center flex_direction--row">
 			<div class="hero padding--all-one text_align--center text_color--light">
 				<h1>Encuentra tu camino</h1>
-				<p>Miles de cursos por descubir,<br>miles de cosas por aprender</p>
+				<h2 class="font_weight--normal">Miles de cursos por descubir,<br>miles de cosas por aprender</h2>
 				
 				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Empieza hoy</router-link>
 			</div>
@@ -15,9 +15,9 @@
 					<h2>Disfruta de una gran colección de temas diferentes, gratis</h2>
 					<p>Descubre nuevos hobbies, aprende exactamente lo que buscas y cuando quieras</p>
 				</div>
-				<div class="course-categories margin_bottom--one flex--row-no-wrap justify_content--center">
+				<nav class="course-categories margin_bottom--one flex--row-no-wrap justify_content--center">
 					<button v-for="(c, i) in courseCategories" :key="i" @click="onCategoryClicked(c.keyword, $event)" :keyword="c.keyword" class="btn margin--all-none text_color--hint">{{ c.name }}</button>
-				</div>
+				</nav>
 				<div class="course-grid row display--grid justify_content--center" is="transition-group" name="fade">
 						<course-tile v-for="n in 8" :key="n"></course-tile>
 				</div>
@@ -111,10 +111,6 @@ export default {
 <style scoped>
 #home .persona {
 	background-image: url('../../assets/img/persona_banner.jpg');
-}
-
-#home .persona .hero p {
-	font-size: 1.25rem;
 }
 
 #home .courses .course-categories {

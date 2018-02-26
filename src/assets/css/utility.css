@@ -477,6 +477,7 @@
 
 .background_color--gradient {
 	background: linear-gradient(45deg, var(--accent-light) 0%, var(--hint) 100%);
+	border: none;
 }
 
 .background_size--cover {
