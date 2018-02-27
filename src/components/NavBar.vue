@@ -6,22 +6,21 @@
 		</router-link>
 
 		<div class="show-for-medium flex--row-no-wrap align_items--center width--parent">
-			<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search show-for-large input-icon margin--all-none background_color--dark border--medium onFocus-border--hint text_color--light" placeholder="Busca cursos!">
+			<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search show-for-large input-icon margin--all-none background_color--dark text_color--light" placeholder="Busca cursos!">
 
 			<nav class="margin_left--auto text_color--light">
 				<router-link to="/about">Acerca de</router-link>
-				<router-link to="/bussiness">Afiliados</router-link>
-				<router-link to="/personal">Personal</router-link>
+				<router-link to="/instructors">Instructores</router-link>
 			</nav>
 
 			<div class="account text_color--light">
-				<router-link to="/signup" class="btn small margin--all-none background_color--accent">Registro</router-link>
+				<router-link to="/signup" class="btn small margin--all-none margin_left--one">Registro</router-link>
 			</div>
 		</div>
 
 		<div class="hide-for-medium flex--row-no-wrap align_items--center width--parent">
 			<div class="margin_left--auto account text_color--light">
-				<router-link to="/signup" class="btn small margin--all-none background_color--accent">Registro</router-link>
+				<router-link to="/signup" class="btn small margin--all-none">Registro</router-link>
 			</div>
 			<button class="margin--all-none padding--all-one text_color--light"><menu-icon/></button>
 		</div>

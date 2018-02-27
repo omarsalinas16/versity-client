@@ -5,7 +5,7 @@
 				<h1>Encuentra tu camino</h1>
 				<h2 class="font_weight--normal">Miles de cursos por descubir,<br>miles de cosas por aprender</h2>
 				
-				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Empieza hoy</router-link>
+				<router-link to="/signup" class="btn gradient">Empieza hoy</router-link>
 			</div>
 		</section>
 
@@ -16,7 +16,7 @@
 					<p>Descubre nuevos hobbies, aprende exactamente lo que buscas y cuando quieras</p>
 				</div>
 				<nav class="course-categories margin_bottom--one flex--row-no-wrap justify_content--center">
-					<button v-for="(c, i) in courseCategories" :key="i" @click="onCategoryClicked(c.keyword, $event)" :keyword="c.keyword" class="btn margin--all-none text_color--hint">{{ c.name }}</button>
+					<button v-for="(c, i) in courseCategories" :key="i" @click="onCategoryClicked(c.keyword, $event)" :keyword="c.keyword" class="btn transparent margin--all-none text_color--hint">{{ c.name }}</button>
 				</nav>
 				<div class="course-grid row display--grid justify_content--center" is="transition-group" name="fade">
 						<course-tile v-for="n in 8" :key="n"></course-tile>
@@ -30,7 +30,7 @@
 				<div class="grid-x">
 					<div class="cell small-12 medium-6 padding--v-two padding-h-one">
 						<h2 class="font_weight--normal">Obtén acceso a cursos especiales,<br/>elimina la publicidad<br/> y más</h2>
-						<router-link to="" class="premium-btn btn margin_top--two border--hint onHover-background_color--hint">Sé premium</router-link>
+						<router-link to="" class="btn hollow hint margin_top--two">Sé premium</router-link>
 					</div>
 					<div class="premium-banner-img cell small-12 medium-6 background_size--cover background_repeat--no-repeat"></div>
 				</div>
@@ -66,7 +66,7 @@
 				<h1>Sé un instructor afiliado</h1>
 				<h2 class="font_weight--normal">Gana dinero. Comparte tu conocimiento. Ayuda a la comunidad</h2>
 
-				<router-link to="/signup" class="btn background_color--gradient text_color--light onHover-text_color--light font_weight--bold">Más información</router-link>
+				<router-link to="/signup" class="btn gradient">Más información</router-link>
 			</div>
 		</section>
 
@@ -75,7 +75,7 @@
 
 			<div class="padding--all-one">
 				<h3 class="display--inline-block margin--all-none margin_right--one font_weight--normal">Desafia tus habilidades. Aprende algo nuevo. Consigue ayuda.</h3>
-				<router-link to="/signup" class="btn small display--inline-block  margin--all-none background_color--accent">Regístrate</router-link>
+				<router-link to="/signup" class="btn small display--inline-block margin--all-none">Regístrate</router-link>
 			</div>
 		</section>
 		
@@ -124,10 +124,6 @@ export default {
 #home .courses .course-grid {
 	grid-gap: 2rem 1rem;
 	grid-template-columns: repeat(auto-fill, minmax(auto, 210px));
-}
-
-#home .premium-banner .premium-btn {
-	transition: background 200ms;
 }
 
 #home .premium-banner .premium-banner-img {

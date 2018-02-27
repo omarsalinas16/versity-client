@@ -467,10 +467,6 @@
 	background: var(--hint);
 }
 
-.onHover-background_color--hint:hover {
-	background: var(--hint);
-}
-
 .background_color--accent {
 	background: var(--accent);
 }
@@ -494,44 +490,6 @@
 
 .background_repeat--no-repeat {
 	background-repeat: no-repeat;
-}
-
-/* Borders */
-
-.border--dark {
-	border: 1px solid var(--dark);
-}
-
-.border--medium {
-	border: 1px solid var(--medium);
-}
-
-.border--light {
-	border: 1px solid var(--light);
-}
-
-.border--accent {
-	border: 1px solid var(--accent);
-}
-
-.onHover-border--accent:hover {
-	border: 1px solid var(--accent);
-}
-
-.onFocus-border--accent:focus {
-	border: 1px solid var(--accent);
-}
-
-.border--hint {
-	border: 1px solid var(--hint);
-}
-
-.onHover-border--hint:hover {
-	border: 1px solid var(--hint);
-}
-
-.onFocus-border--hint:focus {
-	border: 1px solid var(--hint);
 }
 
 /* Font styles */

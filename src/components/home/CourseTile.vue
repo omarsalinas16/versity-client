@@ -7,9 +7,9 @@
 			<p v-if="studentsCount" class="margin--all-none">{{ formattedStudents }} estudiantes</p>
 			<p v-if="duration" class="margin--all-none">{{ formattedDuration }}</p>
 		</div>
-		<div class="details text_color--dark">
-			<router-link :to="url" class="title display--block font_weight--bold onHover-text_color--medium">{{ title }}</router-link>
-			<router-link :to="authorUrl" class="author margin--all-none onHover-text_color--hint">{{ author }}</router-link>
+		<div class="details">
+			<router-link :to="url" class="title display--block font_weight--bold text_color--dark onHover-text_color--medium">{{ title }}</router-link>
+			<router-link :to="authorUrl" class="author margin--all-none text_color--dark onHover-text_color--hint">{{ author }}</router-link>
 		</div>
 	</div>
 </template>

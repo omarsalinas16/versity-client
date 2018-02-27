@@ -34,16 +34,16 @@
 					<h3>Contacto</h3>
 					<div class="grid-x grid-padding-x small-up-2 medium-up-4">
 						<div class="cell">
-							<a href="http://www.twitter.com/" target="_blank" class="display--block"><twitter-icon/></a>
+							<a href="http://www.twitter.com/" target="_blank" class="display--block text_color--medium"><twitter-icon/></a>
 						</div>
 						<div class="cell">
-							<a href="http://www.facebook.com/" target="_blank" class="display--block"><facebook-icon/></a>
+							<a href="http://www.facebook.com/" target="_blank" class="display--block text_color--medium"><facebook-icon/></a>
 						</div>
 						<div class="cell">
-							<a href="http://www.youtube.com/" target="_blank" class="display--block"><youtube-play-icon/></a>
+							<a href="http://www.youtube.com/" target="_blank" class="display--block text_color--medium"><youtube-play-icon/></a>
 						</div>
 						<div class="cell">
-							<a href="mailto:contact@versity.mx" target="_blank" class="display--block"><email-icon/></a>
+							<a href="mailto:contact@versity.mx" target="_blank" class="display--block text_color--medium"><email-icon/></a>
 						</div>
 					</div>
 				</div>

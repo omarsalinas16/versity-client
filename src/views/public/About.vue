@@ -13,7 +13,7 @@
 						<h1>Qué es Versity?</h1>
 						<h3 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nisi eius aliquid vitae deleniti quia inventore placeat aut magni minima id quidem ipsa quasi nulla assumenda, ipsum eveniet ipsam molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, et.</h3>
 
-						<a href="http://www.youtube.com" class="btn display--inline-flex flex_direction--row align_items--center border--light font_weight--bold"><play-icon/>Mira cómo funciona</a>
+						<a href="http://www.youtube.com" class="btn hollow hint display--inline-flex flex_direction--row align_items--center"><play-icon/>Mira cómo funciona</a>
 					</div>
 					<div class="cell small-12 medium-6">
 						

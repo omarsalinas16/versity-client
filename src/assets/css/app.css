@@ -77,44 +77,23 @@ a {
 	transition: color 200ms;
 	text-decoration: none;
 
-	color: var(--detail);
+	color: var(--hint);
 }
 
 a, button {
 	cursor: pointer;
 }
 
-button {
-	white-space: nowrap;
-}
-
-button, .btn {
-	display: inline-block;
-
-	margin: 0;
-	margin-bottom: 1rem;
-	padding: 0.75rem 2rem;
-
-	text-align: center;
-
-	border: none;
-	border-radius: 3px;
-	background-color: transparent;
-}
-
-button.btn {
-	font-weight: bold;
-}
-
-.btn.small {
-	padding: 0.35rem 1.5rem;
+input::placeholder, select::placeholder, textarea::placeholder {
+	opacity: 0.5;
+	color: currentColor;
 }
 
 input.input-icon {
 	padding-left: 2.5rem;
 
 	background-repeat: no-repeat;
-	background-position: 3px calc(36px - 2rem);
+	background-position: 3px calc(38px - 2rem);
 	background-size: 2rem 2rem;
 }
 
@@ -127,18 +106,142 @@ ol {
 }
 
 ol, ul {
-	margin-top: 0; 
+	margin-top: 0;
 	padding-left: 0;
 }
 
 ul ul, ul ol, ol ol, ol ul {
-	font-size: 90%; 
+	font-size: 90%;
 
 	margin: 1.5rem 0 1.5rem 3rem;
 }
 
 li {
 	margin-bottom: 1rem;
+}
+
+/* Foundation & other frameworks overrides */
+
+button {
+	line-height: 1.5;
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+	font-size: inherit;
+
+	transition: border-color 250ms ease-in-out;
+
+	box-shadow: none;
+}
+
+[type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus {
+	transition: border-color 250ms ease-in-out;
+
+	border: 1px solid var(--hint);
+	box-shadow: none;
+}
+
+select {
+	font-size: inherit;
+
+	transition: border-color 250ms ease-in-out;
+
+	box-shadow: none;
+}
+
+select:focus {
+	transition: border-color 250ms ease-in-out;
+
+	box-shadow: none;
+}
+
+/* Button system */
+
+button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
+	--color: var(--accent);
+
+	font-weight: bold;
+
+	display: inline-block;
+
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 0.75rem 2rem;
+
+	transition: background-color 200ms, border-color 200ms, color 200ms;
+	text-align: center;
+
+	color: var(--txt-light);
+	border: 1px solid var(--color);
+	border-radius: 3px;
+	background-color: var(--color);
+}
+
+.btn.small {
+	padding: 0.35rem 1.5rem;
+}
+
+.btn.dark {
+	--color: var(--dark);
+}
+
+.btn.medium {
+	--color: var(--medium);
+}
+
+.btn.light {
+	--color: var(--light);
+	color: var(--txt-dark);
+}
+
+.btn.hint {
+	--color: var(--hint);
+}
+
+.btn.gradient {
+	border: none;
+	background: var(--gradient)
+}
+
+.btn.success {
+	--color: var(--success);
+}
+
+.btn.warning {
+	--color: var(--warning);
+}
+
+.btn.error {
+	--color: var(--error);
+}
+
+.btn.hollow {
+	background-color: transparent;
+}
+
+.btn.hollow:hover {
+	background-color: var(--color);
+}
+
+.btn.hollow.light {
+	color: var(--txt-light);
+}
+
+.btn.hollow.light:hover, .btn.hollow.color-text:hover {
+	color: var(--txt-dark);
+}
+
+.btn.transparent {
+	border-color: transparent;
+	background-color: transparent;
+}
+
+.btn.hollow.color-text {
+	color: var(--color);
+}
+
+.btn.hollow.color-text:hover {
+	color: var(--txt-light);
 }
 
 /* Reusable components */

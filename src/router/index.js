@@ -5,6 +5,8 @@ const Home = () => import('@/views/public/Home')
 const SignUp = () => import('@/views/public/SignUp')
 const About = () => import('@/views/public/About')
 
+const StyleTest = () => import('@/views/dev/StyleTest')
+
 Vue.use(Router)
 
 export default new Router({
@@ -12,6 +14,9 @@ export default new Router({
 	routes: [
 		{ path: '/', name: 'home', component: Home },
 		{ path: '/signup', name: 'signup', component: SignUp },
-		{ path: '/about', name: 'about', component: About }
+		{ path: '/about', name: 'about', component: About },
+
+		
+		{ path: '/dev/styles', name: 'styles', component: StyleTest },
 	]
 })
