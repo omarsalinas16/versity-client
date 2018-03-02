@@ -1,11 +1,13 @@
 <template>
 	<main id="home">
-		<section class="persona page-hero-height background_size--cover background_repeat--no-repeat container_flex--center flex_direction--row">
-			<div class="hero padding--all-one text_align--center text_color--light">
-				<h1>Encuentra tu camino</h1>
-				<h2 class="font_weight--normal">Miles de cursos por descubir,<br>miles de cosas por aprender</h2>
-				
-				<router-link to="/signup" class="btn gradient">Empieza hoy</router-link>
+		<section class="persona page-hero-height background_size--cover background_repeat--no-repeat">
+			<div class="size--fill-parent container_flex--center flex_direction--row">
+				<div class="hero padding--all-one text_align--center text_color--light">
+					<h1>Encuentra tu camino</h1>
+					<h2 class="font_weight--normal">Miles de cursos por descubir,<br>miles de cosas por aprender</h2>
+					
+					<router-link to="/signup" class="btn gradient">Empieza hoy</router-link>
+				</div>
 			</div>
 		</section>
 
@@ -111,6 +113,10 @@ export default {
 <style scoped>
 #home .persona {
 	background-image: url('../../assets/img/persona_banner.jpg');
+}
+
+#home .persona > div {
+	background: rgba(0, 0, 0, 0.45);
 }
 
 #home .courses .course-categories {
