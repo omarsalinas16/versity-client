@@ -1,7 +1,7 @@
 <template>
 	<main id="home">
-		<section class="persona page-hero-height background_size--cover background_repeat--no-repeat">
-			<div class="size--fill-parent container_flex--center flex_direction--row">
+		<section class="persona page-hero background_size--cover background_repeat--no-repeat">
+			<div class="page-hero-backdrop container_flex--center flex_direction--row">
 				<div class="hero padding--all-one text_align--center text_color--light">
 					<h1>Encuentra tu camino</h1>
 					<h2 class="font_weight--normal">Miles de cursos por descubir,<br>miles de cosas por aprender</h2>
@@ -17,7 +17,7 @@
 					<h2>Disfruta de una gran colección de temas diferentes, gratis</h2>
 					<p>Descubre nuevos hobbies, aprende exactamente lo que buscas y cuando quieras</p>
 				</div>
-				<nav class="course-categories margin_bottom--one flex--row-no-wrap justify_content--center">
+				<nav class="course-categories position--relative margin_bottom--one flex--row-no-wrap">
 					<button v-for="(c, i) in courseCategories" :key="i" @click="onCategoryClicked(c.keyword, $event)" :keyword="c.keyword" class="btn transparent margin--all-none text_color--hint">{{ c.name }}</button>
 				</nav>
 				<div class="course-grid row display--grid justify_content--center" is="transition-group" name="fade">
@@ -30,7 +30,7 @@
 			<span class="highlight-bar"></span>
 			<div class="grid-container">
 				<div class="grid-x">
-					<div class="cell small-12 medium-6 padding--v-two padding-h-one">
+					<div class="cell small-12 medium-6 padding--v-two">
 						<h2 class="font_weight--normal">Obtén acceso a cursos especiales,<br/>elimina la publicidad<br/> y más</h2>
 						<router-link to="" class="btn hollow hint margin_top--two">Sé premium</router-link>
 					</div>
@@ -40,7 +40,7 @@
 		</section>
 
 		<section class="why-us background_color--light text_align--center">
-			<div class="grid-container padding--v-two padding-h-one">
+			<div class="grid-container padding--v-two padding--h-one">
 				<h2 class="margin_bottom--two">Por qué Versity?</h2>
 				
 				<div class="grid-x">
@@ -115,12 +115,20 @@ export default {
 	background-image: url('../../assets/img/persona_banner.jpg');
 }
 
-#home .persona > div {
-	background: rgba(0, 0, 0, 0.45);
-}
-
 #home .courses .course-categories {
 	overflow-x: auto;
+
+	padding: 1rem;
+
+	justify-content: flex-start;
+}
+
+@media screen and (min-width: 40em) {
+	#home .courses .course-categories {
+		padding: 0;
+
+		justify-content: center;
+	}
 }
 
 #home .courses .courses-container {

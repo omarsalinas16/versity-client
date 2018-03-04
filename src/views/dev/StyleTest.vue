@@ -1,6 +1,5 @@
 <template>
 	<main id="test" class="background_color--light padding--all-one">
-		<section class="offset"/>
 		<section>
 			<h1>CSS Basic Elements</h1>
 			
@@ -280,9 +279,3 @@ export default {
 	name: 'StyleTest'
 }
 </script>
-
-<style>
-.offset {
-	height: 4rem;
-}
-</style>

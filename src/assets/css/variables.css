@@ -18,4 +18,6 @@
 	--txt-dark: #252835;
 	--txt-medium: #747d85;
 	--txt-light: #fafdff;
+
+	--ease-in-out-sine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
 }

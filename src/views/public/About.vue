@@ -1,9 +1,9 @@
 <template>
 	<main id="about">
-		<div class="slider page-hero-height">
+		<section class="slider page-hero">
 			<swiper :options="swiperOption">
 				<swiper-slide class="slide-1 background_size--cover background_repeat--no-repeat">
-					<div class="size--fill-parent container_flex--center flex_direction--row">
+					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Lo que hacemos</h1>
 							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
@@ -11,7 +11,7 @@
 					</div>
 				</swiper-slide>
 				<swiper-slide class="slide-2 background_size--cover background_repeat--no-repeat">
-					<div class="size--fill-parent container_flex--center flex_direction--row">
+					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Cómo lo hacemos</h1>
 							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
@@ -19,7 +19,7 @@
 					</div>
 				</swiper-slide>
 				<swiper-slide class="slide-3 background_size--cover background_repeat--no-repeat">
-					<div class="size--fill-parent container_flex--center flex_direction--row">
+					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Quienes somos</h1>
 							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
@@ -27,7 +27,7 @@
 					</div>
 				</swiper-slide>
 				<swiper-slide class="slide-4 background_size--cover background_repeat--no-repeat">
-					<div class="size--fill-parent container_flex--center flex_direction--row">
+					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Nuestra historia</h1>
 							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
@@ -35,7 +35,7 @@
 					</div>
 				</swiper-slide>
 				<swiper-slide class="slide-5 background_size--cover background_repeat--no-repeat">
-					<div class="size--fill-parent container_flex--center flex_direction--row">
+					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Por qué lo hacemos</h1>
 							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
@@ -47,9 +47,31 @@
 				<div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
 				<div class="swiper-button-next swiper-button-white" slot="button-next"></div>
 			</swiper>
-		</div>
+		</section>
 
-		<div class="what-is background_color--dark text_color--light">
+		<section class="statistics background_color--light text_color--medium text_align--center">
+			<div class="grid-container padding--h-one">
+				<div class="grid-x">
+					<div class="cell small-12 medium-4">
+						<img src="@/assets/img/connect_with_peers.png" alt="" class="display--block margin--h-auto">
+						<h2>9+ Millones</h2>
+						<h3 class="margin--all-none font_weight--normal">de estudiantes</h3>
+					</div>
+					<div class="cell small-12 medium-4">
+						<img src="@/assets/img/designer_mug.png" alt="" class="display--block margin--h-auto">
+						<h2>5000+ Instructores</h2>
+						<h3 class="margin--all-none font_weight--normal">asociados</h3>
+					</div>
+					<div class="cell small-12 medium-4">
+						<img src="@/assets/img/future_proof.png" alt="" class="display--block margin--h-auto">
+						<h2>1000+ Cursos</h2>
+						<h3 class="margin--all-none font_weight--normal">diversos</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="what-is background_color--dark text_color--light">
 			<span class="highlight-bar"></span>
 
 			<div class="grid-container padding--v-two padding--h-one">
@@ -65,24 +87,25 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="team background_color--light">
-			<div class="team-container grid-container padding--all-one">
+		<section class="team background_color--light">
+			<div class="team-container grid-container padding--h-one padding--v-two">
 				<div class="text_align--center">
 					<h2>Nuestro equipo</h2>
 					<p>Creemos que una gran empresa comienza con grandes personas, donde se predica con el ejemplo.</p>
 				</div>
-				<div class="team-grid row display--grid justify_content--center" is="transition-group" name="fade">
-						
+				<div class="team-grid row display--grid justify_content--center">
+					<team-tile v-for="(p, i) in team" :key="i" :name="p.name" :title="p.title" />
 				</div>
 			</div>
-		</div>
+		</section>
 	</main>
 </template>
 
 <script>
 const { swiper, swiperSlide } = require('vue-awesome-swiper')
+const TeamTile = () => import('@/components/about/TeamTile')
 const PlayIcon = () => import('vue-material-design-icons/play.vue')
 
 import 'swiper/dist/css/swiper.css'
@@ -91,9 +114,17 @@ export default {
 	name: 'About',
 	data() {
 		return {
+			team: [
+				{ name: 'Omar Salinas', title: 'CEO', imagePath: '' },
+				{ name: 'Jesus Moya', title: 'Lead Marketing', imagePath: '' },
+				{ name: 'Pablo Garcia', title: 'Sysops', imagePath: '' },
+				{ name: 'John Doe', title: 'Placeholder', imagePath: '' },
+				{ name: 'John Doe', title: 'Placeholder', imagePath: '' },
+				{ name: 'John Doe', title: 'Placeholder', imagePath: '' },
+			],
 			swiperOption: {
 				slidesPerView: 1,
-				spaceBetween: 30,
+				spaceBetween: 0,
 				loop: true,
 				autoplay: {
 					delay: 6500,
@@ -113,6 +144,7 @@ export default {
 	components: {
 		swiper,
 		swiperSlide,
+		TeamTile,
 		PlayIcon
 	}
 }
@@ -122,10 +154,6 @@ export default {
 #about .slider .swiper-container {
 	width: 100%;
 	height: 100%;
-}
-
-#about .slider .swiper-slide > div {
-	background: rgba(0, 0, 0, 0.45);
 }
 
 #about .slider .slide-1 {
@@ -146,6 +174,28 @@ export default {
 
 #about .slider .slide-5 {
 	background-image: url('../../assets/img/persona_banner.jpg');
+}
+
+#about .statistics .grid-container {
+	padding-top: 5rem;
+	padding-bottom: 4rem;
+}
+
+#about .team .team-grid {
+	grid-gap: 2rem 1rem;
+	grid-template-columns: auto;
+}
+
+@media screen and (min-width: 40em) {
+	#about .team .team-grid {
+		grid-template-columns: repeat(2, auto);
+	}
+}
+
+@media screen and (min-width: 64em) {
+	#about .team .team-grid {
+		grid-template-columns: repeat(3, auto);
+	}
 }
 
 </style>
