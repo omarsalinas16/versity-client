@@ -17,7 +17,6 @@ const StyleTest = () => import('@/views/dev/StyleTest')
 Vue.use(Router)
 
 export default new Router({
-	mode: 'history',
 	routes: [
 		{
 			path: '/',
