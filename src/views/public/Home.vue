@@ -6,7 +6,7 @@
 					<h1>Encuentra tu camino</h1>
 					<h2 class="font_weight--normal">Miles de cursos por descubir,<br>miles de cosas por aprender</h2>
 					
-					<router-link to="/signup" class="btn gradient">Empieza hoy</router-link>
+					<button @click="openSignModal(true)" class="btn gradient">Empieza hoy</button>
 				</div>
 			</div>
 		</section>
@@ -68,7 +68,7 @@
 				<h1>Sé un instructor afiliado</h1>
 				<h2 class="font_weight--normal">Gana dinero. Comparte tu conocimiento. Ayuda a la comunidad</h2>
 
-				<router-link to="/signup" class="btn gradient">Más información</router-link>
+				<router-link to="" class="btn gradient">Más información</router-link>
 			</div>
 		</section>
 
@@ -77,7 +77,7 @@
 
 			<div class="padding--all-one">
 				<h3 class="display--inline-block margin--all-none margin_right--one font_weight--normal">Desafia tus habilidades. Aprende algo nuevo. Consigue ayuda.</h3>
-				<router-link to="/signup" class="btn small display--inline-block margin--all-none">Regístrate</router-link>
+				<button @click="openSignModal(true)" class="btn small display--inline-block margin--all-none">Regístrate</button>
 			</div>
 		</section>
 		
@@ -102,6 +102,9 @@ export default {
 	methods: {
 		onCategoryClicked(keyword, e) {
 			console.log(keyword)
+		},
+		openSignModal(onSignup) {
+			this.$modal.show('sign-modal', { onSignup: onSignup })
 		}
 	},
 	components: {

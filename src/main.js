@@ -6,8 +6,14 @@ import App from './App'
 
 import router from './router'
 import vuex from 'vuex'
+import vmodal from 'vue-js-modal'
 
 Vue.use(vuex)
+
+Vue.use(vmodal, {
+	dialog: true,
+	dynamic: true,
+})
 
 Vue.config.productionTip = false
 

@@ -5,12 +5,9 @@ const PublicWrapper = () => import('@/views/public/PublicWrapper')
 const NavBar = () => import('@/components/NavBar')
 
 const Home = () => import('@/views/public/Home')
-const SignUp = () => import('@/views/public/SignUp')
 const About = () => import('@/views/public/About')
 
 const AppWrapper = () => import('@/views/app/AppWrapper')
-
-const SignIn = () => import('@/views/app/SignIn')
 
 const StyleTest = () => import('@/views/dev/StyleTest')
 
@@ -26,7 +23,6 @@ export default new Router({
 			},
 			children: [
 				{ path: '', name: 'home', component: Home },
-				{ path: 'signup', name: 'signup', component: SignUp },
 				{ path: 'about', name: 'about', component: About },
 			],
 		},
@@ -36,9 +32,7 @@ export default new Router({
 			components: {
 				default: AppWrapper
 			},
-			children: [
-				{ path: 'signin', name: 'signin', component: SignIn },
-			],
+			children: [],
 		},
 
 		{ path: '/dev', redirect: '/dev/styles'},

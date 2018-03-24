@@ -107,7 +107,7 @@ ol {
 
 ol, ul {
 	margin-top: 0;
-	padding-left: 0;
+	padding-left: 1rem;
 }
 
 ul ul, ul ol, ol ol, ol ul {
@@ -276,6 +276,33 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 
 .box-shadow {
 	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.v--modal {
+	background: var(--light) !important;
+}
+
+.v--modal-overlay {
+	display: flex;
+
+	flex-flow: row nowrap;
+
+	background: rgba(0, 0, 0, 0.45) !important;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.v--modal-box {
+	top: 0 !important;
+	left: 0 !important;
+
+	overflow: hidden;
+
+	width: 100% !important;
+	max-width: 60rem;
+	height: auto !important;
+	margin: 1rem;
 }
 
 /* Animations */

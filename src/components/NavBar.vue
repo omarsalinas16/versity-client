@@ -15,15 +15,15 @@
 					<nav class="text_color--light">
 						<router-link to="/" class="display--block">Inicio</router-link>
 						<router-link to="/about" class="display--block">Acerca de</router-link>
-						<router-link to="/instructors" class="display--block">Instructores</router-link>
+						<router-link to="" class="display--block">Instructores</router-link>
 					</nav>
 
-					<div class="grid-x margin_top--one">
+					<div class="grid-x grid-margin-x margin_top--one">
 						<div class="cell small-6">
-							<router-link to="/signup" class="btn small display--block margin--all-none margin_right--one">Registro</router-link>
+							<button @click="openSignModal(true)" class="btn small display--block width--parent margin--all-none">Registro</button>
 						</div>
 						<div class="cell small-6">
-							<router-link to="/app/signin" class="btn hollow small display--block margin--all-none margin_left--one">Entrar</router-link>
+							<button @click="openSignModal(false)" class="btn hollow small display--block width--parent margin--all-none">Entrar</button>
 						</div>
 					</div>
 				</div>
@@ -37,12 +37,12 @@
 
 			<nav class="margin_left--auto text_color--light">
 				<router-link to="/about">Acerca de</router-link>
-				<router-link to="/instructors">Instructores</router-link>
+				<router-link to="">Instructores</router-link>
 			</nav>
 
 			<div class="account text_color--light">
-				<router-link to="/signup" class="btn small margin--all-none margin_left--one">Registro</router-link>
-				<router-link to="/app/signin" class="btn hollow small margin--all-none">Entrar</router-link>
+				<button @click="openSignModal(true)" class="btn small margin--all-none margin_left--one">Registro</button>
+				<button @click="openSignModal(false)" class="btn hollow small margin--all-none">Entrar</button>
 			</div>
 		</div>
 	</aside>
@@ -64,6 +64,9 @@ export default {
 		onSearch() {
 			console.log('search')
 			this.$router.push({ path: 'courses', query: { keywords: this.search }})
+		},
+		openSignModal(onSignup) {
+			this.$modal.show('sign-modal', { onSignup: onSignup })
 		}
 	},
 	components: {

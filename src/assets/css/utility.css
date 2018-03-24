@@ -385,6 +385,10 @@
 	padding-bottom: auto;
 }
 
+.padding_left--none {
+	padding-left: 0;
+}
+
 .padding_left--one {
 	padding-left: 1rem;
 }
@@ -433,6 +437,18 @@
 
 .onHover-text_color--hint:hover {
 	color: var(--hint);
+}
+
+.text_color--success {
+	color: var(--success);
+}
+
+.text_color--warning {
+	color: var(--warning);
+}
+
+.text_color--error {
+	color: var(--error);
 }
 
 /* Text alignment */

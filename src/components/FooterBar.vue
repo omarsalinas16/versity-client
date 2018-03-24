@@ -4,27 +4,27 @@
 			<div class="links grid-x">
 				<div class="cell small-6 medium-3">
 					<h3>Versity</h3>
-					<ul class="link-list">
+					<ul class="link-list padding_left--none">
 						<li><router-link to="/about">Acerca de</router-link></li>
-						<li><router-link to="/instructors">Instructores</router-link></li>
-						<li><router-link to="/community">Personal</router-link></li>
+						<li><router-link to="">Instructores</router-link></li>
+						<li><router-link to="">Personal</router-link></li>
 						<li><router-link to="">Blog</router-link></li>
 						<li><router-link to="">Empleo</router-link></li>
 					</ul>
 				</div>
 				<div class="cell small-6 medium-3">
 					<h3>Comunidad</h3>
-					<ul class="link-list">
-						<li><router-link to="/premium">Premium</router-link></li>
+					<ul class="link-list padding_left--none">
+						<li><router-link to="">Premium</router-link></li>
 						<li><router-link to="">Planes empresariales</router-link></li>
 						<li><router-link to="">Planes academicos</router-link></li>
-						<li><router-link to="/courses">Clases gratuitas</router-link></li>
+						<li><router-link to="">Clases gratuitas</router-link></li>
 					</ul>
 				</div>
 				<div class="cell small-6 medium-3">
 					<h3>Instructores</h3>
-					<ul class="link-list">
-						<li><router-link to="/instructors">Sé un profesor</router-link></li>
+					<ul class="link-list padding_left--none">
+						<li><router-link to="">Sé un profesor</router-link></li>
 						<li><router-link to="">Academia de profesores</router-link></li>
 						<li><router-link to="">Material academico</router-link></li>
 						<li><router-link to="">Afiliaciones</router-link></li>
