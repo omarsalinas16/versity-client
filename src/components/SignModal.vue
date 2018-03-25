@@ -16,18 +16,18 @@
 						<h2>Unete a la comunidad de Versity</h2>
 
 						<form @submit.prevent="onSubmitSignUp">
-							<input type="email" name="email" v-model="upEmail" placeholder="Email">
+							<input type="email" name="email" v-model="upEmail" placeholder="Email" required>
 							<transition name="fade">
 								<p v-if="errors['email']" class="text_color--error">{{ errors['email'] }}</p>
 							</transition>
 
-							<input type="text" name="username" v-model="upUsername" placeholder="Usuario">
+							<input type="text" name="username" v-model="upUsername" placeholder="Usuario" required>
 							<transition name="fade">
 								<p v-if="errors['username']" class="text_color--error">{{ errors['username'] }}</p>
 							</transition>
 
-							<input type="password" name="password" v-model="upPassword" placeholder="Contraseña">
-							<input type="password" name="password-comp" v-model="upPasswordCopy" placeholder="Repita su contraseña">
+							<input type="password" name="password" v-model="upPassword" placeholder="Contraseña" required>
+							<input type="password" name="password-comp" v-model="upPasswordCopy" placeholder="Repita su contraseña" required>
 							<transition name="fade">
 								<p v-if="errors['password']" class="text_color--error">{{ errors['password'] }}</p>
 							</transition>
@@ -46,12 +46,12 @@
 						<h2>Bienvenido otra vez!<br/>Introduce tus datos</h2>
 
 						<form @submit.prevent="onSubmitSignIn">
-							<input type="text" name="username" v-model="inUsername" placeholder="Usuario">
+							<input type="text" name="username" v-model="inUsername" placeholder="Usuario" required>
 							<transition name="fade">
 								<p v-if="errors['username']" class="text_color--error">{{ errors['username'] }}</p>
 							</transition>
 
-							<input type="password" name="password" v-model="inPassword" placeholder="Contraseña">
+							<input type="password" name="password" v-model="inPassword" placeholder="Contraseña" required>
 							<transition name="fade">
 								<p v-if="errors['password']" class="text_color--error">{{ errors['password'] }}</p>
 							</transition>
@@ -72,6 +72,9 @@
 </template>
 
 <script>
+import { apiGet } from '@/api'
+import validation from '@/api/validation'
+
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
 
@@ -105,14 +108,12 @@ export default {
 		onSubmitSignUp() {
 			this.clearErrors()
 
-			if (!this.upEmail) {
-				this.errors['email'] = "El email es requerido."
-			} else if (!this.validEmail(this.upEmail)) {
+			if (!validation.validateEmail(this.upEmail)) {
 				this.errors['email'] = "El email no es valido."
 			}
 
-			if (!this.upUsername) {
-				this.errors['username'] = "El nombre de usuario es requerido."
+			if (!validation.validateUsername(this.upUsername)) {
+				this.errors['username'] = "El nombre de usuario no es valido."
 			}
 
 			if (!this.upPassword) {
@@ -121,13 +122,26 @@ export default {
 				this.errors['password'] = "Las contraseñas deben coincidir."
 			}
 
-			if (!this.hasErrors) return true;
+			if (!this.hasErrors) {
+				this.doSignUpAPI()
+			}
+		},
+		doSignUpAPI() {
+			apiGet('user', {
+					email: this.upEmail,
+					username: this.upUsername,
+					password: this.upPassword,
+				},
+				(data) => console.log('onSuccess'),
+				(error) => console.log('onError'),
+				(error) => console.log('onFatal')
+			)
 		},
 		onSubmitSignIn() {
 			this.clearErrors()
 
-			if (!this.inUsername) {
-				this.errors['username'] = "El nombre de usuario es requerido."
+			if (!validation.validateUsername(this.inUsername)) {
+				this.errors['username'] = "El nombre de usuario no es valido."
 			}
 
 			if (!this.inPassword) {
@@ -135,11 +149,6 @@ export default {
 			}
 
 			if (!this.hasErrors) return true;
-		},
-		validEmail:function(email) {
-			const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-			return re.test(email)
 		},
 		clearErrors() {
 			Object.keys(this.errors).forEach(key => this.errors[key] = '')
@@ -195,16 +204,16 @@ export default {
 	background-image: url('../assets/img/premium_banner.jpg');
 }
 
-.api-btn {
+#sign-modal .api-btn {
 	padding: 0.75rem;
 	margin-left: 0.5rem;
 }
 
-.api-btn.fb {
+#sign-modal .api-btn.fb {
 	--color: #3b5998;
 }
 
-.api-btn.gp {
+#sign-modal .api-btn.gp {
 	--color: #dd4b39;
 }
 
