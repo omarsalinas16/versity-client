@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { apiGet } from '@/api'
+import { get } from '@/api'
 import validation from '@/api/validation'
 
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
@@ -127,15 +127,19 @@ export default {
 			}
 		},
 		doSignUpAPI() {
-			apiGet('user', {
-					email: this.upEmail,
-					username: this.upUsername,
-					password: this.upPassword,
-				},
-				(data) => console.log('onSuccess'),
-				(error) => console.log('onError'),
-				(error) => console.log('onFatal')
-			)
+			get('', {
+				email: this.upEmail,
+				username: this.upUsername,
+				password: '',
+			})
+			.then(res => {
+				if (res.status === 200) {
+					console.log('success')
+				} else {
+					console.log('error')
+				}
+			})
+			.catch(error => console.log('fatal'))
 		},
 		onSubmitSignIn() {
 			this.clearErrors()

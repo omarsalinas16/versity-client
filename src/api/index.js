@@ -1,33 +1,50 @@
-import buildUrl from 'build-url'
+import axios from 'axios'
+import fp from 'lodash/fp'
 
 const API_URL = 'https://versity-app.herokuapp.com/api/'
 const API_URL_DEV = 'http://localhost:3000/api/'
 
-export const API = process.env.NODE_ENV === 'development' ? API_URL_DEV : API_URL
+const API = process.env.NODE_ENV === 'development' ? API_URL_DEV : API_URL
 
-export const apiGet = (
-	path = '',
-	data = {},
-	onSuccess = (data) => {},
-	onError = (error) => {},
-	onFatal = (error) => {}
-) => {
-	const queryParams = {}
+const _axios = axios.create({
+	baseURL: API,
+	timeout: 4000,
+	headers: {
+		'Accept': 'application/json, text/plain',
+		'Content-Type': 'application/json',
+	},
+	withCredentials: true,
+})
 
-	Object.keys(data).filter(value => value).forEach(key => {
-		if (data[key]) queryParams[key] = encodeURIComponent(data[key])
+const processParams = fp.flow(
+	fp.omitBy(fp.isEmpty),
+	fp.mapValues(value => encodeURIComponent(value))
+)
+
+const processRequest = fp.flow(
+	fp.omitBy(fp.isEmpty)
+)
+
+export const get = (url, params) => {
+	return _axios.get(url, {
+		params: processParams(params),
 	})
+}
 
-	const url = buildUrl(API, { path, queryParams })
+export const post = (url, data) => {
+	return _axios.post(url, processRequest(data))
+}
 
-	fetch(url.toString())
-		.then(data => data.json())
-		.then(parsed => {
-			if (parsed.status === 200) {
-				onSuccess(parsed.data)
-			} else {
-				onError(parsed.error)
-			}
-		})
-		.catch(error => onFatal(error))
+export const put = (url, data) => {
+	return _axios.put(url, processRequest(data))
+}
+
+export const del = (url, params) => {
+	return _axios.delete(url, {
+		params: processParams(params)
+	})
+}
+
+export default {
+	get, post, put, del,
 }
