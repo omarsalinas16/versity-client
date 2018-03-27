@@ -12,10 +12,22 @@
 				</nav>
 
 				<transition name="fade" mode="out-in">
-					<div v-if="onSignup" key="sign-up" class="flex--column-no-wrap flex_grow--grow padding--v-two padding_top--one padding--h-one">
+					<div v-if="onSignup" key="sign-up" class="form-area flex--column-no-wrap flex_grow--grow padding--v-two padding_top--one padding--h-one">
 						<h2>Unete a la comunidad de Versity</h2>
 
 						<form @submit.prevent="onSubmitSignUp">
+							<div class="grid-x grid-margin-x">
+								<div class="cell auto">
+									<input type="text" name="firstName" v-model="upfirstName" placeholder="Nombre" required>
+								</div>
+								<div class="cell auto">
+									<input type="text" name="lastName" v-model="uplastName" placeholder="Apellido" required>
+								</div>
+							</div>
+							<transition name="fade">
+								<p v-if="errors['name']" class="text_color--error">{{ errors['name'] }}</p>
+							</transition>
+
 							<input type="email" name="email" v-model="upEmail" placeholder="Email" required>
 							<transition name="fade">
 								<p v-if="errors['email']" class="text_color--error">{{ errors['email'] }}</p>
@@ -42,7 +54,7 @@
 						<p class="margin--all-none margin_top--auto text_align--center text_color--medium">Al registrarme yo, el usuario, acepto los <a>Terminos de Uso</a> y las <a>Politicas de Privacidad</a> de Versity</p>
 					</div>
 
-					<div v-else key="sign-in" class="flex--column-no-wrap flex_grow--grow padding--v-two padding_top--one padding--h-one">
+					<div v-else key="sign-in" class="form-area flex--column-no-wrap flex_grow--grow padding--v-two padding_top--one padding--h-one">
 						<h2>Bienvenido otra vez!<br/>Introduce tus datos</h2>
 
 						<form @submit.prevent="onSubmitSignIn">
@@ -62,6 +74,8 @@
 								<button type="button" class="api-btn gp"><google-plus-icon/></button>
 							</div>
 						</form>
+
+						<p class="text_align--center">No eres miembro aún? <a @click.prevent="onSignup = true">Haz click aqui</a> para registrarte</p>
 					</div>
 				</transition>
 			</div>
@@ -85,19 +99,22 @@ export default {
 			onSignup: true,
 
 			errors: {
+				'name'    : '',
 				'email'   : '',
 				'username': '',
 				'password': '',
 				'response': '',
 			},
 
-			upEmail: "",
-			upUsername: "",
-			upPassword: "",
-			upPasswordCopy: "",
+			upFirstName:    '',
+			upLastName:     '',
+			upEmail:        '',
+			upUsername:     '',
+			upPassword:     '',
+			upPasswordCopy: '',
 
-			inUsername: "",
-			inPassword: "",
+			inUsername: '',
+			inPassword: '',
 		}
 	},
 	methods: {
@@ -108,18 +125,22 @@ export default {
 		onSubmitSignUp() {
 			this.clearErrors()
 
+			if (!validation.validateName(this.upFirstName) || !validation.validateName(this.upLastName)) {
+				this.errors['name'] = 'El nombre no es valido.'
+			}
+
 			if (!validation.validateEmail(this.upEmail)) {
-				this.errors['email'] = "El email no es valido."
+				this.errors['email'] = 'El email no es valido.'
 			}
 
 			if (!validation.validateUsername(this.upUsername)) {
-				this.errors['username'] = "El nombre de usuario no es valido."
+				this.errors['username'] = 'El nombre de usuario no es valido.'
 			}
 
 			if (!this.upPassword) {
-				this.errors['password'] = "La contraseña es requerida."
+				this.errors['password'] = 'La contraseña es requerida.'
 			} else if (this.upPassword != this.upPasswordCopy) {
-				this.errors['password'] = "Las contraseñas deben coincidir."
+				this.errors['password'] = 'Las contraseñas deben coincidir.'
 			}
 
 			if (!this.hasErrors) {
@@ -145,11 +166,11 @@ export default {
 			this.clearErrors()
 
 			if (!validation.validateUsername(this.inUsername)) {
-				this.errors['username'] = "El nombre de usuario no es valido."
+				this.errors['username'] = 'El nombre de usuario no es valido.'
 			}
 
 			if (!this.inPassword) {
-				this.errors['password'] = "La contraseña es requerida."
+				this.errors['password'] = 'La contraseña es requerida.'
 			}
 
 			if (!this.hasErrors) return true;
@@ -194,6 +215,10 @@ export default {
 	position: relative;
 
 	background: var(--light);
+}
+
+#sign-modal .form-area {
+	overflow-y: auto;
 }
 
 #sign-modal .error-messages ul {
