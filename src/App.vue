@@ -14,6 +14,8 @@ import '@/assets/css/variables.css'
 import '@/assets/css/app.css'
 import '@/assets/css/utility.css'
 
+import '@/assets/css/vue2-animate.css'
+
 export default {
 	name: 'App',
 }

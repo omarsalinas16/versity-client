@@ -62,7 +62,6 @@ export default {
 	},
 	methods: {
 		onSearch() {
-			console.log('search')
 			this.$router.push({ path: 'courses', query: { keywords: this.search }})
 		},
 		openSignModal(onSignup) {

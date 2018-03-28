@@ -319,17 +319,3 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	height: auto !important;
 	margin: 1rem;
 }
-
-/* Animations */
-
-.fade-enter-active, .fade-leave-active {
-	transition: opacity 250ms var(--ease-in-out-sine);
-}
-
-.fade-enter, .fade-leave-to {
-	opacity: 0;
-}
-
-.fade-enter-to {
-	opacity: 1;
-}

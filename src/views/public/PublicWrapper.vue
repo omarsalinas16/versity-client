@@ -9,7 +9,7 @@
 
 <script>
 const FooterBar = () => import('@/components/FooterBar')
-const SignModal = () => import('@/components/SignModal')
+const SignModal = () => import('@/views/public/SignModal')
 
 export default {
 	name: 'PublicWrapper',
