@@ -1,5 +1,5 @@
 <template>
-	<div class="form-area flex--column-no-wrap flex_grow--grow padding--v-two padding_top--one padding--h-one">
+	<div class="flex--column-no-wrap">
 		<h2>Bienvenido otra vez!<br/>Introduce tus datos</h2>
 
 		<form @submit.prevent="onSubmitSignIn">

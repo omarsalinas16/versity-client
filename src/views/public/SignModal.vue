@@ -12,8 +12,8 @@
 				</nav>
 
 				<transition name="fade" mode="out-in">
-					<sign-up v-if="onSignup" key="sign-up" />
-					<sign-in v-else key="sign-in" />
+					<sign-up v-if="onSignup" key="sign-up" :class="'form-area flex_grow--grow padding--all-one'"/>
+					<sign-in v-else key="sign-in" :class="'form-area flex_grow--grow padding--all-one'"/>
 				</transition>
 			</div>
 

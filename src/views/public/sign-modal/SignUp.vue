@@ -1,5 +1,5 @@
 <template>
-	<div class="form-area flex--column-no-wrap flex_grow--grow padding--v-two padding_top--one padding--h-one">
+	<div class="flex--column-no-wrap">
 		<h2>Unete a la comunidad de Versity</h2>
 
 		<form @submit.prevent="onSubmitSignUp">
@@ -38,7 +38,7 @@
 			</div>
 		</form>
 
-		<p class="margin--all-none margin_top--auto text_align--center text_color--medium">Al registrarme yo, el usuario, acepto los <a>Terminos de Uso</a> y las <a>Politicas de Privacidad</a> de Versity</p>
+		<p class="margin--all-none margin_top--auto text_align--center text_color--medium">Al registrarme, yo (el usuario) acepto los <a>Terminos de Uso</a> y las <a>Politicas de Privacidad</a> de Versity</p>
 	</div>
 </template>
 
@@ -61,11 +61,11 @@ export default {
 				'response': '',
 			},
 
-			firstName:    '',
-			lastName:     '',
-			email:        '',
-			username:     '',
-			password:     '',
+			firstName   : '',
+			lastName    : '',
+			email       : '',
+			username    : '',
+			password    : '',
 			passwordCopy: '',
 		}
 	},
