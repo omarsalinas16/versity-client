@@ -1,5 +1,5 @@
 <template>
-	<aside id="navbar" class="position--fixed position--top-left width--viewport">
+	<aside id="navbar" class="nav-bar sticky">
 		<div class="mobile-nav show-for-small-only height--parent flex--row-no-wrap align_items--center padding--v-one padding--h-two padding_left--one" :class="{ 'active': mobileActive }">
 			<button @click="mobileActive = !mobileActive" class="mobile-toggle btn transparent position--relative margin--all-none margin_right--one">
 				<close-icon v-if="mobileActive"/>
@@ -77,12 +77,6 @@ export default {
 </script>
 
 <style scoped>
-#navbar {
-	z-index: 999;
-
-	height: 4rem;
-}
-
 #navbar .mobile-nav {
 	transition: background 250ms var(--ease-in-out-sine);
 

@@ -246,6 +246,21 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 
 /* Reusable components */
 
+.nav-bar {
+	z-index: 999;
+
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: var(--nav-height);
+	position: relative;
+}
+
+.nav-bar.sticky {
+	position: fixed;
+}
+
 .highlight-bar {
 	display: block;
 

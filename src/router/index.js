@@ -8,6 +8,7 @@ const Home = () => import('@/views/public/Home')
 const About = () => import('@/views/public/About')
 
 const AppWrapper = () => import('@/views/app/AppWrapper')
+const AppNavBar = () => import('@/components/AppNavBar')
 
 const StyleTest = () => import('@/views/dev/StyleTest')
 
@@ -19,7 +20,7 @@ export default new Router({
 			path: '/',
 			components: {
 				nav: NavBar,
-				default: PublicWrapper
+				default: PublicWrapper,
 			},
 			children: [
 				{ path: '', name: 'home', component: Home },
@@ -30,7 +31,8 @@ export default new Router({
 		{
 			path: '/app',
 			components: {
-				default: AppWrapper
+				nav: AppNavBar,
+				default: AppWrapper,
 			},
 			children: [],
 		},

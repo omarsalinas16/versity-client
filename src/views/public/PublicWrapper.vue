@@ -1,5 +1,5 @@
 <template>
-	<div id="public-wrapper">
+	<div id="public-wrapper" class="background_color--dark">
 		<router-view/>
 		<footer-bar/>
 
@@ -16,6 +16,6 @@ export default {
 	components: {
 		FooterBar,
 		SignModal,
-	}
+	},
 }
 </script>

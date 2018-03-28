@@ -1,7 +1,7 @@
 <template>
-	<div class="background_color--dark font_family--regular">
+	<div id="app-main" class="font_family--regular background_color--light flex--column-no-wrap">
 		<router-view name="nav"/>
-		<router-view/>
+		<router-view class="flex_grow--grow"/>
 	</div>
 </template>
 
@@ -18,3 +18,12 @@ export default {
 	name: 'App',
 }
 </script>
+
+<style scoped>
+#app-main {
+	min-height: 100vh;
+	max-width: 100vw;
+}
+
+</style>
+

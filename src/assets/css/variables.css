@@ -13,6 +13,7 @@
 
 	--dark: #222222;
 	--medium: #9ba2aa;
+	--midlight: #d4d6d9;
 	--light: #f2f2f3;
 
 	--txt-dark: #252835;
@@ -20,4 +21,6 @@
 	--txt-light: #fafdff;
 
 	--ease-in-out-sine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+	--nav-height: 4rem;
 }

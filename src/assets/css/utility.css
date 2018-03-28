@@ -475,6 +475,10 @@
 	background: var(--medium);
 }
 
+.background_color--midlight {
+	background: var(--midlight);
+}
+
 .background_color--light {
 	background: var(--light);
 }
