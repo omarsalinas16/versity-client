@@ -2,7 +2,7 @@
 	<main id="dashboard">
 		<section class="active-courses">
 			<div class="grid-container">
-				<div>
+				<div class="margin_bottom--one">
 					<h1 class="title display--inline-block margin_right--one">Dashboard</h1>
 					<h3 class="display--inline-block font_weight--normal">Bienvenido de vuelta {{ fullName }}!</h3>
 				</div>
@@ -14,8 +14,10 @@
 						<router-link to="/app/finished" active-class="active" class="nav-btn btn display--block">Cursos terminados</router-link>
 						<router-link to="/app/achievements" active-class="active" class="nav-btn btn display--block">Logros</router-link>
 					</nav>
-					<div class="cell auto">
-						<router-view/>
+					<div class="cell auto overflow--hidden">
+						<transition name="fade" mode="out-in">
+							<router-view/>
+						</transition>
 					</div>
 				</div>
 			</div>

@@ -12,6 +12,11 @@ const AppNavBar = () => import('@/components/AppNavBar')
 
 const Dashboard = () => import('@/views/app/Dashboard')
 
+const DashboardActive = () => import('@/views/app/dashboard/DashboardActive')
+const DashboardSaved = () => import('@/views/app/dashboard/DashboardSaved')
+const DashboardFinished = () => import('@/views/app/dashboard/DashboardFinished')
+const DashboardAchievements = () => import('@/views/app/dashboard/DashboardAchievements')
+
 const StyleTest = () => import('@/views/dev/StyleTest')
 
 Vue.use(Router)
@@ -41,10 +46,10 @@ export default new Router({
 					path: '',
 					component: Dashboard,
 					children: [
-						{ path: 'active', name: 'app-home', component: null },
-						{ path: 'saved', name: 'app-home-saved', component: null },
-						{ path: 'finished', name: 'app-home-finished', component: null },
-						{ path: 'achievements', name: 'app-home-achievements', component: null },
+						{ path: 'active', name: 'app-home', component: DashboardActive },
+						{ path: 'saved', name: 'app-home-saved', component: DashboardSaved },
+						{ path: 'finished', name: 'app-home-finished', component: DashboardFinished },
+						{ path: 'achievements', name: 'app-home-achievements', component: DashboardAchievements },
 						{ path: '', redirect: 'active' },
 					],
 				},
