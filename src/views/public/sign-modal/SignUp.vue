@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import { get } from '@/api'
-import validation from '@/api/validation'
+import { get } from '@/utils/api'
+import validation from '@/utils/validation'
 
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')

@@ -23,9 +23,6 @@
 </template>
 
 <script>
-import { get } from '@/api'
-import validation from '@/api/validation'
-
 const SignIn = () => import('@/views/public/sign-modal/SignIn')
 const SignUp = () => import('@/views/public/sign-modal/SignUp')
 

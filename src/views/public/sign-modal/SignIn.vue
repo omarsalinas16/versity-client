@@ -2,7 +2,7 @@
 	<div class="flex--column-no-wrap">
 		<h2>Bienvenido otra vez!<br/>Introduce tus datos</h2>
 
-		<form @submit.prevent="onSubmitSignIn">
+		<form @submit.prevent="onSubmit">
 			<input type="text" name="username" v-model="username" placeholder="Usuario" required>
 			<transition name="fade">
 				<p v-if="errors['username']" class="text_color--error">{{ errors['username'] }}</p>
@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import { get } from '@/api'
-import validation from '@/api/validation'
+import { get } from '@/utils/api'
+import validation from '@/utils/validation'
 
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
@@ -46,7 +46,7 @@ export default {
 		}
 	},
 	methods: {
-		onSubmitSignIn() {
+		onSubmit() {
 			this.clearErrors()
 
 			if (!validation.validateUsername(this.username)) {
@@ -57,7 +57,11 @@ export default {
 				this.errors['password'] = 'La contraseña es requerida.'
 			}
 
-			if (!this.hasErrors) return true;
+			this.$router.push({ path: 'app' })
+
+			if (!this.hasErrors) {
+				return true;
+			}
 		},
 		clearErrors() {
 			Object.keys(this.errors).forEach(key => this.errors[key] = '')

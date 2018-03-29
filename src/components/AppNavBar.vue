@@ -5,9 +5,9 @@
 		<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search flex_grow--not-grow show-for-large input-icon margin--all-none background_color--light" placeholder="Busca cursos!">
 
 		<div class="account flex--row-no-wrap align_items--center margin_left--auto">
-			<router-link to="" class="nav-avatar overflow--hidden">
+			<button to="" class="nav-avatar overflow--hidden margin--all-none padding--all-none">
 				<img src="@/assets/img/male_user_icon.png" alt="" class="size--fill-parent object_fit--cover">
-			</router-link>
+			</button>
 
 			<router-link to="" class="btn small margin--all-none margin_left--one">Sé premium</router-link>
 		</div>
@@ -35,7 +35,9 @@ export default {
 	width: 2rem;
 	height: 2rem;
 
+	border: none;
 	border-radius: 50%;
+	background: transparent;
 }
 
 #app-navbar .search {
@@ -45,5 +47,6 @@ export default {
 
 	background-image: url('../assets/svg/search_icon_black.svg');
 }
+
 
 </style>

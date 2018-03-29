@@ -48,12 +48,16 @@ export default {
 }
 
 #dashboard nav .nav-btn {
-	margin-bottom: 1px;
+	margin: 0;
 
 	color: var(--txt_dark);
 	border-color: var(--medium);
 	border-radius: 0;
 	background: var(--midlight);
+}
+
+#dashboard nav .nav-btn:not(:last-of-type) {
+	border-bottom: none;
 }
 
 #dashboard nav .nav-btn:hover, #dashboard nav .nav-btn.active {
