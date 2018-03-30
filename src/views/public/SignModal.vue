@@ -48,7 +48,7 @@ export default {
 #sign-modal nav a {
 	height: 3rem;
 
-	transition: background 250ms var(--ease-in-out-sine);
+	transition: background 350ms var(--ease-in-out-sine);
 
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;

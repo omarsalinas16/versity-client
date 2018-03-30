@@ -1,51 +1,86 @@
 <template>
 	<main id="dashboard">
-		<section class="active-courses">
-			<div class="grid-container">
-				<div class="margin_bottom--one">
-					<h1 class="title display--inline-block margin_right--one">Dashboard</h1>
-					<h3 class="display--inline-block font_weight--normal">Bienvenido de vuelta {{ fullName }}!</h3>
-				</div>
+		<section class="active-courses grid-container">
+			<div class="margin_bottom--one">
+				<h1 class="title display--inline-block margin_right--one">Dashboard</h1>
+				<h3 class="display--inline-block font_weight--normal">Bienvenido de vuelta {{ fullName }}!</h3>
+			</div>
 
-				<div class="grid-x grid-padding-x">
-					<nav class="cell medium-3">
-						<router-link to="/app/active" active-class="active" class="nav-btn btn display--block">Cursos recientes</router-link>
-						<router-link to="/app/saved" active-class="active" class="nav-btn btn display--block">Cursos guardados</router-link>
-						<router-link to="/app/finished" active-class="active" class="nav-btn btn display--block">Cursos terminados</router-link>
-						<router-link to="/app/achievements" active-class="active" class="nav-btn btn display--block">Logros</router-link>
-					</nav>
-					<div class="cell auto overflow--hidden">
-						<transition name="fade" mode="out-in">
-							<router-view/>
-						</transition>
-					</div>
+			<div class="grid-x grid-padding-x">
+				<nav class="cell medium-3 overflow--hidden">
+					<router-link to="/app/active" active-class="active" class="nav-btn btn display--block">Cursos recientes</router-link>
+					<router-link to="/app/saved" active-class="active" class="nav-btn btn display--block">Cursos guardados</router-link>
+					<router-link to="/app/finished" active-class="active" class="nav-btn btn display--block">Cursos terminados</router-link>
+					<router-link to="/app/achievements" active-class="active" class="nav-btn btn display--block">Logros</router-link>
+				</nav>
+				<div class="cell auto overflow--hidden">
+					<transition name="fade" mode="out-in">
+						<router-view/>
+					</transition>
 				</div>
 			</div>
+		</section>
+
+		<transition name="fadeHeight">
+			<section v-if="showPremiumBanner" class="grid-container margin--v-two text_align--center">
+				<div class="premium-banner position--relative background_color--dark grid-container padding--all-one">
+					<button @click="dismissPremiumBanner" class="dismiss-premium-btn btn transparent position--absolute position--top-right margin--all-none padding--all-none"><close-icon/></button>
+					
+					<p class="text_color--light margin--all-none margin_bottom--one">Parece que aún no tienes Versity Premium. Contratalo y disfruta de grandes beneficios especiales!</p>
+					<router-link to="" class="btn small hint margin--all-none">Haz click aqui!</router-link>
+				</div>
+			</section>
+		</transition>
+
+		<section class="recommended grid-container">
+			<h2>Recomendaciones</h2>
+		</section>
+
+		<section class="recent grid-container">
+			<h2>Añadidos recientemente</h2>
+		</section>
+
+		<section class="news grid-container">
+			<h2>Noticias</h2>
 		</section>
 	</main>
 </template>
 
 <script>
+const CloseIcon = () => import('vue-material-design-icons/close.vue')
+
 export default {
 	name: 'Dashboard',
 	data() {
 		return {
-			firstName: 'John',
-			lastName: 'Doe',
+			firstName: 'User',
+			lastName: 'Name',
+
+			hasPremium: false,
+			dismissedPremium: false,
+		}
+	},
+	methods: {
+		dismissPremiumBanner() {
+			this.dismissedPremium = true
 		}
 	},
 	computed: {
 		fullName() {
 			return this.firstName + ' ' + this.lastName
-		}
-	}
+		},
+		showPremiumBanner() {
+			return !this.hasPremium && !this.dismissedPremium
+		},
+	},
+	components: {
+		CloseIcon
+	},
 }
 </script>
 
 <style scoped>
 #dashboard nav {
-	overflow: hidden;
-
 	border-radius: 3px;
 }
 
@@ -64,6 +99,21 @@ export default {
 
 #dashboard nav .nav-btn:hover, #dashboard nav .nav-btn.active {
 	background: var(--light);
+}
+
+#dashboard .premium-banner {
+	border-radius: 3px;
+}
+
+#dashboard .premium-banner .dismiss-premium-btn {
+	padding: 0.5rem;
+	opacity: 0.6;
+
+	transition-property: opacity;
+}
+
+#dashboard .premium-banner .dismiss-premium-btn:hover {
+	opacity: 1;
 }
 
 </style>

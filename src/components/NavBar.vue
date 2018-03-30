@@ -77,7 +77,7 @@ export default {
 
 <style scoped>
 #navbar .mobile-nav {
-	transition: background 250ms var(--ease-in-out-sine);
+	transition: background 350ms var(--ease-in-out-sine);
 
 	background: rgba(33, 33, 33, 0);
 }
@@ -89,7 +89,7 @@ export default {
 #navbar .mobile-nav .mobile-toggle {
 	padding: 0.5rem;
 
-	transition: background 250ms, color 250ms var(--ease-in-out-sine);
+	transition: background 350ms, color 350ms var(--ease-in-out-sine);
 
 	background: rgba(33, 33, 33, 0.9);
 }
@@ -144,7 +144,7 @@ export default {
 #navbar nav a {
 	padding: 0.5rem 1rem;
 
-	transition: color 250ms var(--ease-in-out-sine);
+	transition: color 350ms var(--ease-in-out-sine);
 
 	color: inherit;
 }

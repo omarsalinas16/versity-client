@@ -257,9 +257,29 @@
 	margin: 1rem;
 }
 
+.margin--h-one {
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+.margin--h-two {
+	margin-right: 2rem;
+	margin-left: 2rem;
+}
+
 .margin--h-auto {
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.margin--v-one {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.margin--v-two {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
 .margin--v-auto {

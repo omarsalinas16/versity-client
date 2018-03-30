@@ -2741,7 +2741,7 @@ select {
   transition-duration: 750ms !important; }
 
 .fast {
-  transition-duration: 250ms !important; }
+  transition-duration: 350ms !important; }
 
 .linear {
   transition-timing-function: linear !important; }
@@ -2824,7 +2824,7 @@ select {
   animation-duration: 750ms !important; }
 
 .fast {
-  animation-duration: 250ms !important; }
+  animation-duration: 350ms !important; }
 
 .linear {
   animation-timing-function: linear !important; }

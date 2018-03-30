@@ -85,7 +85,7 @@
 </template>
 
 <script>
-const CourseTile = () => import('@/components/home/CourseTile')
+const CourseTile = () => import('@/components/CourseTile')
 
 export default {
 	name: 'Home',

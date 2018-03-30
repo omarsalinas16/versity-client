@@ -74,7 +74,7 @@ img {
 }
 
 a {
-	transition: color 250ms var(--ease-in-out-sine);
+	transition: color 350ms var(--ease-in-out-sine);
 	text-decoration: none;
 
 	color: var(--hint);
@@ -129,13 +129,13 @@ button {
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
 	font-size: inherit;
 
-	transition: border-color 250ms var(--ease-in-out-sine);
+	transition: border-color 350ms var(--ease-in-out-sine);
 
 	box-shadow: none;
 }
 
 [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus {
-	transition: border-color 250ms var(--ease-in-out-sine);
+	transition: border-color 350ms var(--ease-in-out-sine);
 
 	border: 1px solid var(--hint);
 	box-shadow: none;
@@ -144,13 +144,13 @@ button {
 select {
 	font-size: inherit;
 
-	transition: border-color 250ms var(--ease-in-out-sine);
+	transition: border-color 350ms var(--ease-in-out-sine);
 
 	box-shadow: none;
 }
 
 select:focus {
-	transition: border-color 250ms var(--ease-in-out-sine);
+	transition: border-color 350ms var(--ease-in-out-sine);
 
 	box-shadow: none;
 }
@@ -168,7 +168,7 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	margin-bottom: 1rem;
 	padding: 0.75rem 2rem;
 
-	transition: background-color 250ms, border-color 250ms, color 250ms var(--ease-in-out-sine);
+	transition: background-color 350ms, border-color 350ms, color 350ms var(--ease-in-out-sine);
 	text-align: center;
 
 	color: var(--txt-light);
@@ -187,6 +187,7 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 
 .btn.medium {
 	--color: var(--medium);
+	color: var(--txt-dark);
 }
 
 .btn.light {
@@ -223,6 +224,10 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	background-color: var(--color);
 }
 
+.btn.hollow.medium {
+	color: var(--txt-light);
+}
+
 .btn.hollow.light {
 	color: var(--txt-light);
 }
@@ -236,12 +241,17 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	background-color: transparent;
 }
 
-.btn.hollow.color-text {
+.btn.hollow.color-text,
+.btn.transparent.color-text {
 	color: var(--color);
 }
 
 .btn.hollow.color-text:hover {
 	color: var(--txt-light);
+}
+
+.btn.round {
+	border-radius: 50%;
 }
 
 /* Reusable components */
@@ -318,4 +328,15 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	max-width: 60rem;
 	height: auto !important;
 	margin: 1rem;
+}
+
+.fadeHeight-enter-active, .fadeHeight-leave-active {
+	overflow: hidden;
+	transition: opacity 350ms, max-height 350ms var(--ease-in-out-sine);
+	max-height: 999px;
+}
+
+.fadeHeight-enter, .fadeHeight-leave-to {
+	opacity: 0;
+	max-height: 0px;
 }
