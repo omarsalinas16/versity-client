@@ -77,6 +77,10 @@ export default {
 	padding: 3rem 1rem 4rem;
 }
 
+#footer.top-border .footer-container {
+	border-top: 1px solid #dfdfdf;
+}
+
 #footer .footer-container .links .link-list {
 	list-style: none;
 }

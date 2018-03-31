@@ -329,14 +329,3 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	height: auto !important;
 	margin: 1rem;
 }
-
-.fadeHeight-enter-active, .fadeHeight-leave-active {
-	overflow: hidden;
-	transition: opacity 350ms, max-height 350ms var(--ease-in-out-sine);
-	max-height: 999px;
-}
-
-.fadeHeight-enter, .fadeHeight-leave-to {
-	opacity: 0;
-	max-height: 0px;
-}

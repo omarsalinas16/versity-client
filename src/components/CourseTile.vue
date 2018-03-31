@@ -1,6 +1,6 @@
 <template>
 	<div class="course-tile">
-		<router-link :to="url">
+		<router-link :to="url" class="thumbnail width--parent">
 			<img :src="thumbnailPath" alt="" class="display--block object_fit--cover">
 		</router-link>
 		<div class="info display--flex flex_direction--row flex_wrap--no-wrap justify_content--space-between text_color--medium">
@@ -64,12 +64,24 @@ export default {
 
 <style scoped>
 .course-tile {
-	width: 210px;
+	width: auto;
 }
 
-.course-tile > img {
-	width: 210px;
+@media screen and (min-width: 40em) {
+	.course-tile {
+		width: 210px;
+	}
+}
+
+.course-tile .thumbnail img {
+	width: 100%;
 	height: 140px;
+}
+
+@media screen and (min-width: 40em) {
+	.course-tile .thumbnail img {
+		width: 210px;
+	}
 }
 
 .course-tile > .info {

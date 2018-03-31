@@ -152,6 +152,10 @@
 	position: fixed;
 }
 
+.position--static {
+	position: static;
+}
+
 .position--top-left {
 	top: 0;
 	right: auto;

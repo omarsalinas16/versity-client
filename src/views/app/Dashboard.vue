@@ -1,6 +1,6 @@
 <template>
 	<main id="dashboard">
-		<section class="active-courses grid-container">
+		<section class="dashboard-section active-courses grid-container">
 			<div class="margin_bottom--one">
 				<h1 class="title display--inline-block margin_right--one">Dashboard</h1>
 				<h3 class="display--inline-block font_weight--normal">Bienvenido de vuelta {{ fullName }}!</h3>
@@ -21,7 +21,7 @@
 			</div>
 		</section>
 
-		<transition name="fadeHeight">
+		<transition name="fade">
 			<section v-if="showPremiumBanner" class="grid-container margin--v-two text_align--center">
 				<div class="premium-banner position--relative background_color--dark grid-container padding--all-one">
 					<button @click="dismissPremiumBanner" class="dismiss-premium-btn btn transparent position--absolute position--top-right margin--all-none padding--all-none"><close-icon/></button>
@@ -32,22 +32,39 @@
 			</section>
 		</transition>
 
-		<section class="recommended grid-container">
+		<section class="dashboard-section recommended grid-container">
 			<h2>Recomendaciones</h2>
+
+			<swiper class="courses-slider flex--row-no-wrap" :options="coursesSwiperOption">
+				<swiper-slide v-for="n in 8" :key="n">
+					<course-tile></course-tile>
+				</swiper-slide>
+			</swiper>
 		</section>
 
-		<section class="recent grid-container">
+		<section class="dashboard-section recent grid-container">
 			<h2>Añadidos recientemente</h2>
+
+			<swiper class="courses-slider flex--row-no-wrap" :options="coursesSwiperOption">
+				<swiper-slide v-for="n in 8" :key="n">
+					<course-tile></course-tile>
+				</swiper-slide>
+			</swiper>
 		</section>
 
-		<section class="news grid-container">
+		<section class="dashboard-section news grid-container">
 			<h2>Noticias</h2>
 		</section>
 	</main>
 </template>
 
-<script>
+<script scoped>
+const { swiper, swiperSlide } = require('vue-awesome-swiper')
+const CourseTile = () => import('@/components/CourseTile')
+
 const CloseIcon = () => import('vue-material-design-icons/close.vue')
+
+import 'swiper/dist/css/swiper.css'
 
 export default {
 	name: 'Dashboard',
@@ -58,6 +75,30 @@ export default {
 
 			hasPremium: false,
 			dismissedPremium: false,
+
+			coursesSwiperOption: {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+				spaceBetween: 16,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true
+				},
+				breakpoints: {
+					1024: {
+						slidesPerView: 3,
+						slidesPerGroup: 3,
+					},
+					720: {
+						slidesPerView: 2,
+						slidesPerGroup: 2,
+					},
+					480: {
+						slidesPerView: 1,
+						slidesPerGroup: 1,
+					},
+				},
+			},
 		}
 	},
 	methods: {
@@ -74,12 +115,15 @@ export default {
 		},
 	},
 	components: {
-		CloseIcon
+		CloseIcon,
+		CourseTile,
+		swiper,
+		swiperSlide,
 	},
 }
 </script>
 
-<style scoped>
+<style>
 #dashboard nav {
 	border-radius: 3px;
 }
@@ -99,6 +143,11 @@ export default {
 
 #dashboard nav .nav-btn:hover, #dashboard nav .nav-btn.active {
 	background: var(--light);
+}
+
+#dashboard .dashboard-section {
+	margin-top: 1rem;
+	margin-bottom: 3rem;
 }
 
 #dashboard .premium-banner {
