@@ -8,7 +8,13 @@ import router from './router'
 import vuex from 'vuex'
 import vmodal from 'vue-js-modal'
 
+import es from 'vee-validate/dist/locale/es'
+import VeeValidate, { Validator } from 'vee-validate';
+
 Vue.use(vuex)
+
+Validator.localize('es', es)
+Vue.use(VeeValidate)
 
 Vue.use(vmodal, {
 	dialog: true,
