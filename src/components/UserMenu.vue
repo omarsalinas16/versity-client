@@ -1,12 +1,14 @@
 <template>
-	<button id="user-menu" @click="menuActive = !menuActive" class="btn transparent position--relative  margin--all-none margin_left--one padding--all-none">
-		<img src="@/assets/img/male_user_icon.png" alt="" class="avatar size--fill-parent object_fit--cover">
+	<div id="user-menu" class="position--relative margin_left--one">
+		<button  @click="menuActive = !menuActive" class="btn transparent margin--all-none padding--all-none">
+			<img src="@/assets/img/male_user_icon.png" alt="" class="avatar size--fill-parent object_fit--cover">
+		</button>
 
 		<transition name="fade">
 			<div v-show="menuActive" class="floating-menu position--absolute padding--all-one background_color--midlight text_color--dark">
-				<div class="top-section position--relative margin_bottom--one">
+				<div class="top-section position--relative margin_bottom--one text_align--center">
 					<img src="@/assets/img/male_user_icon.png" alt="" class="avatar large object_fit--cover">
-					<p class="name">{{ name }}</p>
+					<p class="name font_weight--bold">{{ name }}</p>
 				</div>
 				<nav class="menu position--relative font_weight--normal text_align--left">
 					<router-link to="" class="display--block text_color--dark">Perfil</router-link>
@@ -17,7 +19,7 @@
 				</nav>
 			</div>
 		</transition>
-	</button>
+	</div>
 </template>
 
 <script>
