@@ -31,6 +31,18 @@ export const get = (url, params) => {
 	})
 }
 
+/**
+ * @param {String} url The api endpoint subpath
+ * @param {Object} data The request data structure object
+ * @example
+ * post('register', {
+ *   firstName: 'John',
+ *   lastName: 'Doe',
+ *   username: 'j.doe',
+ * })
+ * .then(data => { })
+ * .catch(error => { })
+ */
 export const post = (url, data) => {
 	return _axios.post(url, processRequest(data))
 }

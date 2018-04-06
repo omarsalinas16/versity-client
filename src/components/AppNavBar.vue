@@ -14,16 +14,15 @@
 				</span>
 			</button>
 
-			<button class="nav-avatar btn transparent overflow--hidden margin--all-none margin_left--one padding--all-none">
-				<img src="@/assets/img/male_user_icon.png" alt="" class="size--fill-parent object_fit--cover">
-			</button>
+			<user-menu/>
 
-			<router-link to="" class="btn small margin--all-none margin_left--one">Sé premium</router-link>
+			<router-link to="" class="btn small show-for-medium margin--all-none margin_left--one">Sé premium</router-link>
 		</div>
 	</aside>
 </template>
 
 <script>
+const UserMenu = () => import('@/components/UserMenu')
 const BellOutlineIcon = () => import('vue-material-design-icons/bell-outline.vue')
 
 export default {
@@ -47,7 +46,8 @@ export default {
 		},
 	},
 	components: {
-		BellOutlineIcon
+		BellOutlineIcon,
+		UserMenu,
 	},
 }
 </script>
@@ -62,13 +62,6 @@ export default {
 #app-navbar .notif-btn .notif-point {
 	width: 8px;
 	height: 8px;
-
-	border-radius: 50%;
-}
-
-#app-navbar .nav-avatar {
-	width: 2rem;
-	height: 2rem;
 
 	border-radius: 50%;
 }
