@@ -1,5 +1,5 @@
 <template>
-	<modal name="sign-modal" transition="fade">
+	<modal name="sign-modal" transition="fade" @before-open="beforeOpen">
 		<div id="sign-modal" class="grid-x">
 			<div class="cell small-12 large-6 flex--column-no-wrap">
 				<nav class="grid-x background_color--medium text_align--center">
@@ -32,6 +32,11 @@ export default {
 		return {
 			onSignup: true,
 		}
+	},
+	methods: {
+		beforeOpen (event) {
+			this.onSignup = event.params.onSignup
+		},
 	},
 	components: {
 		SignIn,
