@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { get } from '@/utils/api'
+import { post } from '@/utils/api'
 
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
@@ -46,13 +46,25 @@ export default {
 		onSubmit() {
 			this.$validator.validateAll().then((result) => {
 				if (result) {
-					this.doSignInAPI()
+					this.login()
 				}
 			})
 		},
-		doSignInAPI() {
-			this.$router.push({ path: 'app' })
-		}
+		login() {
+			post('user/login', {
+				username: this.username,
+				password: this.password,
+			})
+			.then(res => {
+				if (res.status === 200) {
+					this.$router.push({ path: 'app' })
+					console.log('success');
+				} else {
+					console.log('error')
+				}
+			})
+			.catch(error => console.log('fatal'))
+		},
 	},
 	components: {
 		FacebookIcon,

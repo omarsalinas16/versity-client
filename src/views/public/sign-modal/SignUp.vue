@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { get } from '@/utils/api'
+import { post } from '@/utils/api'
 import validation from '@/utils/validation'
 
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
@@ -75,21 +75,22 @@ export default {
 		onSubmitSignUp() {
 			this.$validator.validateAll().then((result) => {
 				if (result) {
-					this.doSignUpAPI()
+					this.register()
 				}
 			})
 		},
-		doSignUpAPI() {
-			get('', {
+		register() {
+			post('user/register', {
 				firstName: this.firstName,
 				lastName: this.lastName,
 				email: this.email,
-				username: this.username,
+				userName: this.username,
 				password: this.password,
 			})
 			.then(res => {
 				if (res.status === 200) {
-					console.log('success')
+					this.$router.push({ path: 'app' })
+					console.log('success');
 				} else {
 					console.log('error')
 				}

@@ -26,6 +26,7 @@ const processRequest = fp.flow(
 )
 
 export const get = (url, params) => {
+	console.log(params);
 	return _axios.get(url, {
 		params: processParams(params),
 	})
