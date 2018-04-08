@@ -89,6 +89,21 @@ export default {
 			})
 			.then(res => {
 				if (res.status === 200) {
+					this.autoLogin()
+					console.log('success');
+				} else {
+					console.log('error')
+				}
+			})
+			.catch(error => console.log('fatal'))
+		},
+		autoLogin() {
+			post('user/login', {
+				username: this.username,
+				password: this.password,
+			})
+			.then(res => {
+				if (res.status === 200) {
 					this.$router.push({ path: 'app' })
 					console.log('success');
 				} else {
