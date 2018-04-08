@@ -59,25 +59,19 @@
 </template>
 
 <script scoped>
+import { mapState, mapGetters } from 'vuex'
+
 const { swiper, swiperSlide } = require('vue-awesome-swiper')
 const CourseTile = () => import('@/components/CourseTile')
 
 const CloseIcon = () => import('vue-material-design-icons/close.vue')
 
 import 'swiper/dist/css/swiper.css'
-import { get } from '@/utils/api'
 
 export default {
 	name: 'Dashboard',
 	data() {
 		return {
-			
-			firstName:'',
-			lastName:'',
-			email:'',
-			username:'',
-
-				
 			hasPremium: false,
 			dismissedPremium: false,
 
@@ -110,32 +104,16 @@ export default {
 		dismissPremiumBanner() {
 			this.dismissedPremium = true
 		},
-
-		getUserProfile() {
-			get('user/status', {
-				firstName: this.firstName,
-				lastName: this.lastName,
-				email: this.email,
-				username: this.username,
-			})
-			.then(res => {
-				if (res.status === 200) {
-					console.log('success')
-				} else {
-					console.log('error')
-				}
-			})
-			.catch(error => console.log('fatal'))
-		},
-		   
 	},
-	mounted () {
-			this.getUserProfile(); 
-	}, 
 	computed: {
-		fullName() {
-			return this.firstName + ' ' + this.lastName
-		},
+		...mapState([
+			'firstName',
+			'lastName',
+			'username'
+		]),
+		...mapGetters([
+			'fullName'
+		]),
 		showPremiumBanner() {
 			return !this.hasPremium && !this.dismissedPremium
 		},

@@ -5,13 +5,12 @@ import Vue from 'vue'
 import App from './App'
 
 import router from './router'
-import vuex from 'vuex'
 import vmodal from 'vue-js-modal'
 
 import es from 'vee-validate/dist/locale/es'
 import VeeValidate, { Validator } from 'vee-validate';
 
-Vue.use(vuex)
+import store from '@/stores/user-info'
 
 Validator.localize('es', es)
 Vue.use(VeeValidate)
@@ -26,6 +25,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
+	store,
 	router,
 	render: h => h(App)
 })

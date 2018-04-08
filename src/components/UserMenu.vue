@@ -8,14 +8,15 @@
 			<div v-show="menuActive" class="floating-menu position--absolute padding--all-one background_color--midlight text_color--dark">
 				<div class="top-section position--relative margin_bottom--one text_align--center">
 					<img src="@/assets/img/male_user_icon.png" alt="" class="avatar large object_fit--cover">
-					<p class="name font_weight--bold">{{ name }}</p>
+					<p class="name font_weight--bold margin--all-none margin_top--one">{{ fullName }}</p>
+					<p class="margin--all-none margin_bottom--one">{{ username }}</p>
 				</div>
 				<nav class="menu position--relative font_weight--normal text_align--left">
 					<router-link to="" class="display--block text_color--dark">Perfil</router-link>
 					<router-link to="" class="display--block text_color--dark">Cursos</router-link>
 					<router-link to="" class="display--block text_color--dark">Preferencias</router-link>
 
-					<router-link to="" class="display--block margin_top--one font_weight--bold text_color--dark">Salir</router-link>
+					<a @click.prevent="signOut" class="display--block margin_top--one font_weight--bold text_color--dark">Salir</a>
 				</nav>
 			</div>
 		</transition>
@@ -23,6 +24,9 @@
 </template>
 
 <script>
+import { get } from '@/utils/api'
+import { mapState, mapGetters } from 'vuex'
+
 export default {
 	name: 'UserMenu',
 	data() {
@@ -30,20 +34,21 @@ export default {
 			menuActive: false,
 		}
 	},
-	props: {
-		firstName: {
-			type: String,
-			required: true,
-			default: 'User'
-		},
-		lastName: {
-			type: String,
-			required: true,
-			default: 'Name'
+	methods: {
+		signOut() {
+			get('user/logout')
+			.finally(res => this.$router.push({ path: '/' }))
 		}
 	},
 	computed: {
-		name() { return `${this.firstName} ${this.lastName}` }
+		...mapState([
+			'firstName',
+			'lastName',
+			'username'
+		]),
+		...mapGetters([
+			'fullName'
+		]),
 	}
 }
 </script>
