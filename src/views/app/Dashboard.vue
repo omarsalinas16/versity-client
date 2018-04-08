@@ -23,7 +23,7 @@
 
 		<transition name="fade">
 			<section v-if="showPremiumBanner" class="grid-container margin--v-two text_align--center">
-				<div class="premium-banner position--relative background_color--dark grid-container padding--all-one">
+				<div class="premium-banner position--relative background_color--dark grid-container padding--all-one box-shadow">
 					<button @click="dismissPremiumBanner" class="dismiss-premium-btn btn transparent position--absolute position--top-right margin--all-none padding--all-none"><close-icon/></button>
 					
 					<p class="text_color--light margin--all-none margin_bottom--one">Parece que aún no tienes Versity Premium. Contratalo y disfruta de grandes beneficios especiales!</p>
