@@ -6,7 +6,7 @@
 					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Lo que hacemos</h1>
-							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
+							<h2 class="font_weight--normal">Nosotros en Versity seleccionamos y ofrecemos una gran colección de cursos interactivos en linea. Es una plataforma que sigue la filosofía de compartir nuestro conocimiento para mejorar como comunidad.</h2>						
 						</div>
 					</div>
 				</swiper-slide>
@@ -14,7 +14,7 @@
 					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Cómo lo hacemos</h1>
-							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
+							<h2 class="font_weight--normal">En Versity todos puedes compartir su experiencia y crear cursos. Además, nuestro equipo se dedica a contactar con notables profesionistas y profesores de instituciones importantes para asegurar un estandar de calidad en los cursos ofertados.</h2>						
 						</div>
 					</div>
 				</swiper-slide>
@@ -22,7 +22,7 @@
 					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Quienes somos</h1>
-							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
+							<h2 class="font_weight--normal">Somos una comunidad internacional con una extensa cantidad de afiliados alrededor del mundo hispanohablante. Todos con el deseo de enseñar y aprender por igual.</h2>
 						</div>
 					</div>
 				</swiper-slide>
@@ -30,7 +30,7 @@
 					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Nuestra historia</h1>
-							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
+							<h2 class="font_weight--normal">Versity comenzó como un pequeño equipo de desarrolladores originarios de México.</h2>			
 						</div>
 					</div>
 				</swiper-slide>
@@ -38,7 +38,7 @@
 					<div class="page-hero-backdrop container_flex--center flex_direction--row">
 						<div class="grid-container padding--h-two padding--v-one text_align--center text_color--light">
 							<h1>Por qué lo hacemos</h1>
-							<h2 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt accusantium beatae officiis? Voluptate praesentium nisi eligendi, voluptates quos ullam dolorum excepturi quod deleniti expedita earum? Placeat cupiditate quam harum aperiam.</h2>						
+							<h2 class="font_weight--normal">Cuando comenzó este proyecto no existian servicios de cursos de calidad para la comunidad hispanohablante que a su vez ofreciera estos servicios de forma gratuita y bajo un enfoque de comunidad en el que fueran los mismos usuarios quienes se ayudaran entre si. Esta fue la meta de Versity, brindar una plataforma que permitiera el autoaprendizaje de calidad en español.</h2>						
 						</div>
 					</div>
 				</swiper-slide>
@@ -59,12 +59,12 @@
 					</div>
 					<div class="cell small-12 medium-4">
 						<img src="@/assets/img/designer_mug.png" alt="" class="display--block margin--h-auto">
-						<h2>5000+ Instructores</h2>
+						<h2>9999+ Instructores</h2>
 						<h3 class="margin--all-none font_weight--normal">asociados</h3>
 					</div>
 					<div class="cell small-12 medium-4">
 						<img src="@/assets/img/future_proof.png" alt="" class="display--block margin--h-auto">
-						<h2>1000+ Cursos</h2>
+						<h2>9999+ Cursos</h2>
 						<h3 class="margin--all-none font_weight--normal">diversos</h3>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 				<div class="grid-x">
 					<div class="cell small-12 medium-6">
 						<h1>Qué es Versity?</h1>
-						<h3 class="font_weight--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nisi eius aliquid vitae deleniti quia inventore placeat aut magni minima id quidem ipsa quasi nulla assumenda, ipsum eveniet ipsam molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, et.</h3>
+						<h3 class="font_weight--normal">Descubre cómo es que Versity ofrece sus cursos, cómo puedes aprender de profesionistas y profesores reales, además de con otros compañeros; ó como puedes obtener ingresos adicionales siendo un instructor afiliado.</h3>
 
 						<a href="http://www.youtube.com" class="btn hollow hint display--inline-flex flex_direction--row align_items--center margin_top--two"><play-icon/>Mira cómo funciona</a>
 					</div>
