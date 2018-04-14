@@ -45,21 +45,26 @@ export default {
 	methods: {
 		onSubmit() {
 			this.$validator.validateAll().then((result) => {
+				// Only allow the login to be requested if the entire form is valid.
 				if (result) {
 					this.login()
 				}
 			})
 		},
 		login() {
+			// Post the username and password to "user/login"
 			post('user/login', {
 				username: this.username,
 				password: this.password,
 			})
 			.then(res => {
 				if (res.status === 200) {
+					// If the response was successful then redirect to the dashboard at app
 					this.$router.push({ path: 'app' })
 					console.log('success');
 				} else {
+					// Either id the login was rejected or failed then do nothing.
+					// TODO: Display an error message.
 					console.log('error')
 				}
 			})

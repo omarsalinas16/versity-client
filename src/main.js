@@ -1,3 +1,8 @@
+/**
+ * This is the entry point of the application, here Vue is loaded, configured and mounted on a root DOM element of id
+ * app. VueValidate is used for form and input validation, Vuex is used as a state manager and immutable data store.
+ */
+
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'

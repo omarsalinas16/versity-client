@@ -1,3 +1,7 @@
+<!--
+	SignModal.vue is the responsible of displaying both the signing up and signin in modal view, based on the onSignup
+	property.
+-->
 <template>
 	<modal name="sign-modal" transition="fade" @before-open="beforeOpen">
 		<div id="sign-modal" class="grid-x">
@@ -35,6 +39,7 @@ export default {
 	},
 	methods: {
 		beforeOpen (event) {
+			// Receive the onSignup parameter from the modal call and assign in to the data state.
 			this.onSignup = event.params.onSignup
 		},
 	},

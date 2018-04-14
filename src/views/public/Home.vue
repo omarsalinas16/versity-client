@@ -1,3 +1,7 @@
+<!--
+	Home.vue is the landing page of the site, here the most relevant and eye-catching informations is placed as well as
+	direct links to the importat parts of the site.
+-->
 <template>
 	<main id="home">
 		<section class="persona page-hero background_size--cover background_repeat--no-repeat">
@@ -101,9 +105,13 @@ export default {
 	},
 	methods: {
 		onCategoryClicked(keyword, e) {
+			// TODO: The idea here is that when a category button is clicked a list of the top n (probably 8) most recent
+			// courses from that category is requested from the API.
 			console.log(keyword)
 		},
 		openSignModal(onSignup) {
+			// Open the SignModal.vue view and set the boolean parameter onSignup so the modal knows what subcomponent to
+			// display.
 			this.$modal.show('sign-modal', { onSignup: onSignup })
 		}
 	},
