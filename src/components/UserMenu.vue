@@ -12,8 +12,8 @@
 					<p class="margin--all-none margin_bottom--one">{{ username }}</p>
 				</div>
 				<nav class="menu position--relative font_weight--normal text_align--left">
-					<router-link to="" class="display--block text_color--dark">Perfil</router-link>
-					<router-link to="" class="display--block text_color--dark">Cursos</router-link>
+					<router-link to="/app/profile" class="display--block text_color--dark">Perfil</router-link>
+					<router-link to="/app/active" class="display--block text_color--dark">Cursos</router-link>
 					<router-link to="" class="display--block text_color--dark">Preferencias</router-link>
 
 					<a @click.prevent="signOut" class="display--block margin_top--one font_weight--bold text_color--dark">Salir</a>

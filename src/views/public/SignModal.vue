@@ -38,8 +38,11 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * Receive the onSignup parameter from the modal call and assign in to the data state.
+		 * @param {object} event - The VueModal event object containing the params and other data.
+		 */
 		beforeOpen (event) {
-			// Receive the onSignup parameter from the modal call and assign in to the data state.
 			this.onSignup = event.params.onSignup
 		},
 	},

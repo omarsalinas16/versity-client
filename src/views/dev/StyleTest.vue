@@ -1,3 +1,7 @@
+<!--
+	This view is intended as a testing ground and layout visualization of all reusable CSS styles in the site, use this as
+	a reference to how should an element see and how to follow the enterprise image.
+-->
 <template>
 	<main id="test" class="background_color--light padding--all-one">
 		<section>

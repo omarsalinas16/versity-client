@@ -104,14 +104,21 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * TODO: The idea here is that when a category button is clicked a list of the top n (probably 8) most recent
+		 * courses from that category is requested from the API.
+		 * @param {string} keyword - The keyword string identifier.
+		 * @param {object} e - The click event object.
+		 */
 		onCategoryClicked(keyword, e) {
-			// TODO: The idea here is that when a category button is clicked a list of the top n (probably 8) most recent
-			// courses from that category is requested from the API.
 			console.log(keyword)
 		},
+		/**
+		 * Open the SignModal.vue view and set the boolean parameter onSignup so the modal knows what subcomponent to
+		 * display.
+		 * @param {boolean} onSignup - Whether to open the sign up or sign in view.
+		 */
 		openSignModal(onSignup) {
-			// Open the SignModal.vue view and set the boolean parameter onSignup so the modal knows what subcomponent to
-			// display.
 			this.$modal.show('sign-modal', { onSignup: onSignup })
 		}
 	},

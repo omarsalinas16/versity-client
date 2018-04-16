@@ -43,6 +43,10 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * This is called when the submit button in the form is clicked, validates the entire form and if all the inputs are
+		 * correct then allow the request to the API to be made.
+		 */
 		onSubmit() {
 			this.$validator.validateAll().then((result) => {
 				// Only allow the login to be requested if the entire form is valid.
@@ -51,6 +55,9 @@ export default {
 				}
 			})
 		},
+		/**
+		 * This function realizes the quest to the API and awaits a response.
+		 */
 		login() {
 			// Post the username and password to "user/login"
 			post('user/login', {

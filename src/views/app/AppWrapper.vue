@@ -13,7 +13,7 @@ const FooterBar = () => import('@/components/FooterBar')
 
 export default {
 	name: 'AppWrapper',
-	created() {
+	beforeMount() {
 		this.getUserInfo()
 	},
 	methods: {
@@ -29,19 +29,22 @@ export default {
 		},
 		getUserInfo() {
 			get('user/status')
-			.then(res => {
-				const { data, status } = res
+				.then(res => {
+					const { data, status } = res
 
-				console.log(data, status)
+					console.log(data, status)
 
-				if (status === 200 && data.status) {
-					const { user } = data
-					this.setUserInfo(user.first_name, user.last_name, user.username)
-				} else {
-					console.log('fail')
-					this.$router.push({ path: '/' })
-				}
-			})
+					if (status === 200 && data.status) {
+						const { user } = data
+						this.setUserInfo(user.first_name, user.last_name, user.username)
+					} else {
+						console.log('fail')
+						this.$router.push({ path: '/' })
+					}
+				})
+				.catch(err => {
+					if (err) this.$router.push({ path: '/' })
+				})
 		},
 	},
 	components: {

@@ -17,9 +17,11 @@ import VeeValidate, { Validator } from 'vee-validate';
 
 import store from '@/stores/user-info'
 
+// VeeValidate initialization, set output messages to spanish.
 Validator.localize('es', es)
 Vue.use(VeeValidate)
 
+// VueModal initialization.
 Vue.use(vmodal, {
 	dialog: true,
 	dynamic: true,
