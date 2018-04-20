@@ -284,12 +284,14 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	border-color: var(--error);
 }
 
-.input-field .hint {
+.input-field .hint,
+.small-hint {
 	font-size: 11px;
 	font-weight: bold;
 }
 
-.input-field.error .hint {
+.input-field.error .hint,
+.small-hint.error {
 	color: var(--error);
 }
 
@@ -301,7 +303,7 @@ button, [type='button'], [type='submit'], [type='reset'], [type='clear'], .btn {
 	top: 0;
 	left: 0;
 
-	width: 100vw;
+	width: 100%;
 	height: var(--nav-height);
 	position: relative;
 }

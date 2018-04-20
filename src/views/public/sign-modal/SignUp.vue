@@ -42,11 +42,15 @@
 			</p>
 
 			<div class="flex--row-no-wrap margin_top--one">
-				<button type="submit" class="display--block width--parent">Registrarse</button>
+				<spinner-button type="submit" class="display--block width--parent" :loading="isLoading">Registrarse</spinner-button>
 				<button type="button" class="api-btn fb"><facebook-icon/></button>
 				<button type="button" class="api-btn gp"><google-plus-icon/></button>
 			</div>
 		</form>
+
+		<transition name="fade">
+			<p v-show="error" class="small-hint error">{{ error }}</p>
+		</transition>
 
 		<p class="margin--all-none margin_top--auto text_align--center text_color--medium">Al registrarme, yo (el usuario) acepto los <a>Terminos de Uso</a> y las <a>Politicas de Privacidad</a> de Versity</p>
 	</div>
@@ -55,6 +59,7 @@
 <script>
 import { post } from '@/utils/api'
 
+const SpinnerButton = () => import('@/components/SpinnerButton')
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
 
@@ -68,6 +73,9 @@ export default {
 			username    : '',
 			password    : '',
 			passwordCopy: '',
+
+			isLoading: false,
+			error: '',
 		}
 	},
 	methods: {
@@ -79,6 +87,9 @@ export default {
 			})
 		},
 		register() {
+			this.error = ''
+			this.isLoading = true
+
 			post('user/register', {
 				firstName: this.firstName,
 				lastName: this.lastName,
@@ -89,14 +100,24 @@ export default {
 			.then(res => {
 				if (res.status === 200) {
 					this.autoLogin()
-					console.log('success');
-				} else {
-					console.log('error')
 				}
 			})
-			.catch(error => console.log('fatal'))
+			.catch(error => {
+				if (error.response) {
+					this.error = 'Ya existe un usuario con estos datos.'
+				} else if (error.request) {
+					this.error = 'No hay comunicación con el servicio, vuelva a intentarlo más tarde.'
+				} else {
+					this.error = 'Ha ocurrido un error inesperado, PANICO!'
+				}
+
+				this.isLoading = false
+			})
 		},
 		autoLogin() {
+			this.error = ''
+			this.isLoading = true
+
 			post('user/login', {
 				username: this.username,
 				password: this.password,
@@ -104,17 +125,26 @@ export default {
 			.then(res => {
 				if (res.status === 200) {
 					this.$router.push({ path: 'app' })
-					console.log('success');
-				} else {
-					console.log('error')
+					this.isLoading = false
 				}
 			})
-			.catch(error => console.log('fatal'))
+			.catch(error => {
+				if (error.response) {
+					this.error = 'Ha fallado el autodireccionamiento a su cuenta.'
+				} else if (error.request) {
+					this.error = 'No hay comunicación con el servicio, vuelva a intentarlo más tarde.'
+				} else {
+					this.error = 'Ha ocurrido un error inesperado, PANICO!'
+				}
+
+				this.isLoading = false
+			})
 		},
 	},
 	components: {
 		FacebookIcon,
 		GooglePlusIcon,
+		SpinnerButton,
 	}
 }
 </script>

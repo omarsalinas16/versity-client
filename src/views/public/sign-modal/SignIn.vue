@@ -18,11 +18,15 @@
 			</p>
 
 			<div class="flex--row-no-wrap margin_top--one">
-				<button type="submit" class="display--block width--parent">Iniciar sesión</button>
+				<spinner-button type="submit" class="display--block width--parent" :loading="isLoading">Iniciar sesión</spinner-button>
 				<button type="button" class="api-btn fb"><facebook-icon/></button>
 				<button type="button" class="api-btn gp"><google-plus-icon/></button>
 			</div>
 		</form>
+
+		<transition name="fade">
+			<p v-show="error" class="small-hint error">{{ error }}</p>
+		</transition>
 
 		<p class="text_align--center">No eres miembro aún? <a @click.prevent="onSignup = true">Haz click aqui</a> para registrarte</p>
 	</div>
@@ -30,6 +34,8 @@
 
 <script>
 import { post } from '@/utils/api'
+
+const SpinnerButton = () => import('@/components/SpinnerButton')
 
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
@@ -40,6 +46,9 @@ export default {
 		return {
 			username: '',
 			password: '',
+
+			isLoading: false,
+			error: '',
 		}
 	},
 	methods: {
@@ -59,6 +68,8 @@ export default {
 		 * This function realizes the quest to the API and awaits a response.
 		 */
 		login() {
+			this.error = ''
+			this.isLoading = true
 			// Post the username and password to "user/login"
 			post('user/login', {
 				username: this.username,
@@ -68,19 +79,26 @@ export default {
 				if (res.status === 200) {
 					// If the response was successful then redirect to the dashboard at app
 					this.$router.push({ path: 'app' })
-					console.log('success');
-				} else {
-					// Either id the login was rejected or failed then do nothing.
-					// TODO: Display an error message.
-					console.log('error')
+					this.isLoading = false
 				}
 			})
-			.catch(error => console.log('fatal'))
+			.catch(error => {
+				if (error.response) {
+					this.error = 'Estos datos parecen ser incorrectos.'
+				} else if (error.request) {
+					this.error = 'No hay comunicación con el servicio, vuelva a intentarlo más tarde.'
+				} else {
+					this.error = 'Ha ocurrido un error inesperado, PANICO!'
+				}
+
+				this.isLoading = false
+			})
 		},
 	},
 	components: {
 		FacebookIcon,
 		GooglePlusIcon,
+		SpinnerButton,
 	},
 }
 </script>

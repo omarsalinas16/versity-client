@@ -1,6 +1,6 @@
 <template>
 	<div class="course-tile">
-		<router-link :to="url" class="thumbnail width--parent">
+		<router-link :to="url" class="display--inline-block thumbnail width--parent">
 			<img :src="thumbnailPath" alt="" class="display--block object_fit--cover">
 		</router-link>
 		<div class="info display--flex flex_direction--row flex_wrap--no-wrap justify_content--space-between text_color--medium">

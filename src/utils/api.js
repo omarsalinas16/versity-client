@@ -2,8 +2,7 @@ import axios from 'axios'
 import fp from 'lodash/fp'
 
 const API_URL = 'https://versity-app.herokuapp.com/api/'
-// const API_URL_DEV = 'http://localhost:3000/api/'
-const API_URL_DEV = 'https://versity-app.herokuapp.com/api/'
+const API_URL_DEV = 'http://localhost:3000/api/'
 
 const API = process.env.NODE_ENV === 'development' ? API_URL_DEV : API_URL
 

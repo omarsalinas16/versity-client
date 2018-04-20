@@ -74,7 +74,8 @@ export default {
 	top: calc(100% + 2rem);
 	right: 0;
 
-	min-width: 160px;
+	min-width: 190px;
+	max-width: 280px;
 
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
