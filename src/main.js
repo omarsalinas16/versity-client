@@ -9,6 +9,8 @@ import Vue from 'vue'
 
 import App from './App'
 
+import vClickOutside from 'v-click-outside'
+
 import router from './router'
 import vmodal from 'vue-js-modal'
 
@@ -16,6 +18,9 @@ import es from 'vee-validate/dist/locale/es'
 import VeeValidate, { Validator } from 'vee-validate';
 
 import store from '@/stores/user-info'
+
+// Click outside event
+Vue.use(vClickOutside)
 
 // VeeValidate initialization, set output messages to spanish.
 Validator.localize('es', es)

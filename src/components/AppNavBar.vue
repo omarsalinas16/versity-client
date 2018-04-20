@@ -5,7 +5,7 @@
 		<input type="text" name="navbar-search" v-model="search" @keyup.enter="onSearch" class="search flex_grow--not-grow show-for-large input-icon margin--all-none background_color--light" placeholder="Busca cursos!">
 
 		<div class="account flex--row-no-wrap align_items--center margin_left--auto">
-			<button class="notif-btn btn round medium margin--all-none">
+			<button @click="notifDockActive = !notifDockActive" class="notif-btn btn round medium margin--all-none">
 				<span class="position--relative">
 					<bell-outline-icon/>
 					<transition name="fade">
@@ -18,11 +18,16 @@
 
 			<router-link to="" class="btn small show-for-medium margin--all-none margin_left--one">Sé premium</router-link>
 		</div>
+
+		<transition name="fadeRight">
+			<notification-dock v-show="notifDockActive" :notifications="notifications" :onClose="a => notifDockActive = a"/>
+		</transition>
 	</aside>
 </template>
 
 <script>
 const UserMenu = () => import('@/components/UserMenu')
+const NotificationDock = () => import('@/components/NotificationDock')
 const BellOutlineIcon = () => import('vue-material-design-icons/bell-outline.vue')
 
 export default {
@@ -30,6 +35,7 @@ export default {
 	data() {
 		return {
 			search: '',
+			notifDockActive: false,
 			notifications: [
 				"Got a meme"
 			]
@@ -38,7 +44,7 @@ export default {
 	methods: {
 		onSearch() {
 			this.$router.push({ path: 'courses', query: { keywords: this.search }})
-		},
+		}
 	},
 	computed: {
 		hasNotifications() {
@@ -47,6 +53,7 @@ export default {
 	},
 	components: {
 		BellOutlineIcon,
+		NotificationDock,
 		UserMenu,
 	},
 }
