@@ -1,7 +1,7 @@
 /**
  * This is the entry point of the application, here Vue is loaded, configured and mounted on a root DOM element of id
  * app. VueValidate is used for form and input validation, Vuex is used as a state manager and immutable data store.
- * @module main
+ * @module
  */
 
 // The Vue build version to load with the `import` command
@@ -38,7 +38,7 @@ import router from './router'
 import vmodal from 'vue-js-modal'
 
 import es from 'vee-validate/dist/locale/es'
-import VeeValidate, { Validator } from 'vee-validate';
+import VeeValidate, { Validator } from 'vee-validate'
 
 import store from '@/stores/user-info'
 

@@ -29,7 +29,17 @@ import '@/assets/css/utility.css'
 // Port of animate.css for Vue transitions.
 import '@/assets/css/vue2-animate.css'
 
+/**
+ * Entry point and common wrapper of the entire web application. Loads common CSS stylesheets.
+ * @name App
+ * @class
+ */
 export default {
+	/**
+	 * @name App#name
+	 * @const
+	 * @type {String}
+	 */
 	name: 'App',
 }
 </script>

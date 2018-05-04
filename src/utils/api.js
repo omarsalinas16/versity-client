@@ -1,6 +1,6 @@
 /**
  * Helper module that wraps axios and facilitates API calls as well as error handling. All API request function receive and return the same data types. For example, to realize a POST request:
- * @module api
+ * @module
  * @example
  * post('api/path', {
  * 	key: "value"
@@ -68,7 +68,6 @@ const processRequest = fp.flow(
  * @returns {Promise} The promise of the request
  */
 export const get = (url, params) => {
-	console.log(params);
 	return _axios.get(url, {
 		params: processParams(params),
 	})
