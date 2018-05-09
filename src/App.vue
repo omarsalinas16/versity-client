@@ -36,9 +36,9 @@ import '@/assets/css/vue2-animate.css'
  */
 export default {
 	/**
-	 * @name App#name
-	 * @const
-	 * @type {String}
+	 * @memberof App
+	 * @name name
+	 * @const {String}
 	 */
 	name: 'App',
 }

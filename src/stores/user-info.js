@@ -6,26 +6,21 @@ Vue.use(Vuex)
 /**
  * This store represents the logged User data.
  * @name stores/UserInfo
- * @class
+ * @class 
  */
 export default new Vuex.Store({
 	/**
-	 * @name stores/UserInfo~state
+	 * @name stores/UserInfo.state
 	 * @type {Object}
-	 * @property {String} firstName The first name
-	 * @property {String} lastName The last name
-	 * @property {String} username The username
+	 * @property {String} firstName The User's first name
+	 * @property {String} lastName The User's last name
+	 * @property {String} username The User's username
 	 */
 	state: {
 		firstName: '',
 		lastName: '',
 		username: '',
 	},
-	/**
-	 * @name stores/UserInfo~getters
-	 * @type {Object}
-	 * @property {Function} fullName Returns the composed full name based on [firstName] and [lastName]
-	 */
 	getters: {
 		fullName(state) {
 			return `${state.firstName} ${state.lastName}`
