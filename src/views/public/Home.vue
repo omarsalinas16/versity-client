@@ -24,8 +24,16 @@
 				<nav class="course-categories position--relative margin_bottom--one flex--row-no-wrap">
 					<button v-for="(c, i) in courseCategories" :key="i" @click="onCategoryClicked(c.keyword, $event)" :keyword="c.keyword" class="btn transparent margin--all-none text_color--hint">{{ c.name }}</button>
 				</nav>
-				<div class="course-grid row display--grid justify_content--center" is="transition-group" name="fade">
-						<course-tile v-for="n in 8" :key="n"></course-tile>
+				<div v-if="courses" class="course-grid row display--grid justify_content--center" is="transition-group" name="fade">
+						<course-tile v-for="(c, i) in courses" :key="i" v-show="c"
+							:title="c.title"
+							:author="`${c._author.first_name} ${c._author.last_name}`"
+							:thumbnailPath="c.thumbnailURL"
+							:url="`/courses/${c.slug}`"
+						/>
+				</div>
+				<div v-else class="row">
+					<p>Aún no contamos con cursos para esta categoría, vuelve a visitarnos en otra ocación!</p>
 				</div>
 			</div>
 		</section>
@@ -89,6 +97,7 @@
 </template>
 
 <script>
+import { post } from '@/utils/api'
 const CourseTile = () => import('@/components/CourseTile')
 
 export default {
@@ -98,10 +107,14 @@ export default {
 			courseCategories: [
 				{ name: 'Software', keyword: 'software' },
 				{ name: 'Diseño', keyword: 'design' },
-				{ name: 'Matemáticas', keyword: 'maths' },
-				{ name: 'Química', keyword: 'chemistry' },
-			]
+				{ name: 'Negocios', keyword: 'business' },
+				{ name: 'Música', keyword: 'music' },
+			],
+			courses: []
 		}
+	},
+	beforeMount() {
+		this.searchCoursesByCategory(this.courseCategories[0].keyword)
 	},
 	methods: {
 		/**
@@ -111,7 +124,23 @@ export default {
 		 * @param {object} e - The click event object.
 		 */
 		onCategoryClicked(keyword, e) {
-			console.log(keyword)
+			this.searchCoursesByCategory(keyword)
+		},
+		searchCoursesByCategory(category) {
+			post('course/search', {
+				categories: category,
+				size: 8
+			})
+				.then(res => {
+					if (res.status === 200 && res.data) this.courses = res.data
+					else this.courses = []
+				})
+				.catch(err => {
+					if (err) {
+						console.error(err)
+						this.courses = []
+					}
+				})
 		},
 		/**
 		 * Open the SignModal.vue view and set the boolean parameter onSignup so the modal knows what subcomponent to

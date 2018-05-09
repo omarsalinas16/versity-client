@@ -14,6 +14,7 @@
  */
 
 import axios from 'axios'
+import _ from 'lodash'
 import fp from 'lodash/fp'
 
 const API_URL = 'https://versity-app.herokuapp.com/api/'
@@ -57,7 +58,11 @@ const processParams = fp.flow(
  * @returns {Object} The processed object
  */
 const processRequest = fp.flow(
-	fp.omitBy(fp.isEmpty)
+	fp.omitBy((value) => {
+		if (_.isNil(value)) return true
+		if (_.isString(value) && !value) return true
+		if ((_.isArray(value) || _.isObject(value)) && _.isEmpty(value)) return true
+	})
 )
 
 /**

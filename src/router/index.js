@@ -7,6 +7,7 @@ const NavBar = () => import('@/components/NavBar')
 
 const Home = () => import('@/views/public/Home')
 const About = () => import('@/views/public/About')
+const Course = () => import('@/views/public/Course')
 
 // Web-app views.
 const AppWrapper = () => import('@/views/app/AppWrapper')
@@ -39,6 +40,7 @@ export default new Router({
 			children: [
 				{ path: '', name: 'home', component: Home },
 				{ path: 'about', name: 'about', component: About },
+				{ path: 'courses/:slug', name: 'course', component: Course }
 			],
 		},
 
