@@ -98,6 +98,7 @@
 
 <script>
 import { post } from '@/utils/api'
+const _ = require('lodash')
 const CourseTile = () => import('@/components/CourseTile')
 
 export default {
@@ -110,11 +111,9 @@ export default {
 				{ name: 'Negocios', keyword: 'business' },
 				{ name: 'Música', keyword: 'music' },
 			],
+			selectedCategory: 'software',
 			courses: []
 		}
-	},
-	beforeMount() {
-		this.searchCoursesByCategory(this.courseCategories[0].keyword)
 	},
 	methods: {
 		/**
@@ -124,9 +123,9 @@ export default {
 		 * @param {object} e - The click event object.
 		 */
 		onCategoryClicked(keyword, e) {
-			this.searchCoursesByCategory(keyword)
+			this.selectedCategory = keyword
 		},
-		searchCoursesByCategory(category) {
+		searchCoursesByCategory: _.debounce(function (category) {
 			post('course/search', {
 				categories: category,
 				size: 8
@@ -141,7 +140,7 @@ export default {
 						this.courses = []
 					}
 				})
-		},
+		}, 300, { leading: true }),
 		/**
 		 * Open the SignModal.vue view and set the boolean parameter onSignup so the modal knows what subcomponent to
 		 * display.
@@ -149,6 +148,14 @@ export default {
 		 */
 		openSignModal(onSignup) {
 			this.$modal.show('sign-modal', { onSignup: onSignup })
+		}
+	},
+	watch: {
+		selectedCategory: {
+			handler: function (val, oldVal) {
+				this.searchCoursesByCategory(val)
+			},
+			immediate: true
 		}
 	},
 	components: {
@@ -183,8 +190,15 @@ export default {
 }
 
 #home .courses .course-grid {
-	grid-gap: 2rem 1rem;
-	grid-template-columns: repeat(auto-fill, minmax(auto, 210px));
+	grid-gap: 1rem;
+	grid-template-columns: auto;
+}
+
+@media screen and (min-width: 40em) {
+	#home .courses .course-grid {
+		grid-gap: 2rem 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 210px));
+	}
 }
 
 #home .premium-banner .premium-banner-img {

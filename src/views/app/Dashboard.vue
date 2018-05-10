@@ -32,33 +32,46 @@
 			</section>
 		</transition>
 
-		<section class="dashboard-section recommended grid-container">
+		<section v-show="recommended && recommended.length > 0" class="dashboard-section recommended grid-container">
 			<h2>Recomendaciones</h2>
 
 			<swiper class="courses-slider flex--row-no-wrap" :options="coursesSwiperOption">
-				<swiper-slide v-for="n in 8" :key="n">
-					<course-tile></course-tile>
+				<swiper-slide v-for="(c, i) in recommended" :key="i" v-show="c">
+					<course-tile
+							:title="c.title"
+							:author="`${c._author.first_name} ${c._author.last_name}`"
+							:thumbnailPath="c.thumbnailURL"
+							:url="`/courses/${c.slug}`"
+						/>
 				</swiper-slide>
 			</swiper>
 		</section>
 
-		<section class="dashboard-section recent grid-container">
+		<section v-show="recent && recent.length > 0" class="dashboard-section recent grid-container">
 			<h2>Añadidos recientemente</h2>
 
 			<swiper class="courses-slider flex--row-no-wrap" :options="coursesSwiperOption">
-				<swiper-slide v-for="n in 8" :key="n">
-					<course-tile></course-tile>
+				<swiper-slide v-for="(c, i) in recent" :key="i" v-show="c">
+					<course-tile
+							:title="c.title"
+							:author="`${c._author.first_name} ${c._author.last_name}`"
+							:thumbnailPath="c.thumbnailURL"
+							:url="`/courses/${c.slug}`"
+						/>
 				</swiper-slide>
 			</swiper>
 		</section>
 
 		<section class="dashboard-section news grid-container">
 			<h2>Noticias</h2>
+			<p>Aún no hay noticias disponibles</p>
 		</section>
 	</main>
 </template>
 
 <script scoped>
+import { post } from '@/utils/api'
+const _ = require('lodash')
 import { mapState, mapGetters } from 'vuex'
 
 const { swiper, swiperSlide } = require('vue-awesome-swiper')
@@ -98,12 +111,49 @@ export default {
 					},
 				},
 			},
+
+			recommended: [],
+			recent: []
 		}
+	},
+	beforeMount() {
+		this.searchCourses({ size: 8 })
+			.then(res => {
+				if (res && res.status === 200) {
+					this.recent = res.data
+				} else {
+					this.recent = []
+				}
+			})
+			.catch(err => {
+				if (err) {
+					console.error(err)
+					this.recent = []
+				}
+			})
+
+		this.searchCourses({ categories: ['software', 'design'], size: 8 })
+			.then(res => {
+				if (res && res.status === 200) {
+					this.recommended = res.data
+				} else {
+					this.recommended = []
+				}
+			})
+			.catch(err => {
+				if (err) {
+					console.error(err)
+					this.recommended = []
+				}
+			})
 	},
 	methods: {
 		dismissPremiumBanner() {
 			this.dismissedPremium = true
 		},
+		searchCourses: _.debounce(function (options) {
+			return post('course/search', options)
+		}, 300, { leading: true })
 	},
 	computed: {
 		...mapState([

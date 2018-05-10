@@ -75,12 +75,13 @@ export default {
 
 .course-tile .thumbnail img {
 	width: 100%;
-	height: 140px;
+	height: 210px;
 }
 
 @media screen and (min-width: 40em) {
 	.course-tile .thumbnail img {
 		width: 210px;
+		height: 140px;
 	}
 }
 
