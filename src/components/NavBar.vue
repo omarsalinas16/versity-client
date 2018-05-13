@@ -52,7 +52,19 @@
 const MenuIcon = () => import('vue-material-design-icons/menu.vue')
 const CloseIcon = () => import('vue-material-design-icons/close.vue')
 
+/**
+ * Definition of navigation bar. Loads common CSS stylesheets.
+ * @name NavBar
+ * @class
+ * @property {String} search The string of what are you looking for
+ * @property {boolean} notifDockActive Defines a boolean
+ */
 export default {
+	/**
+	 * @memberof NavBar
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'NavBar',
 	data() {
 		return {
@@ -61,9 +73,19 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * Receive the route and send the user to the assigned path.
+		 * @function
+		 * @name onSearch
+		 * @param {string} path The path 
+		 */
 		onSearch() {
 			this.$router.push({ path: 'courses', query: { keywords: this.search }})
 		},
+		/**
+		 * Receive the onSignup parameter from the modal call and assign in to the data state.
+		 * @param {object} onSignup - The VueModal event object containing the params and other data.
+		 */
 		openSignModal(onSignup) {
 			this.$modal.show('sign-modal', { onSignup: onSignup })
 		}

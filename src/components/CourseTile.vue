@@ -15,7 +15,24 @@
 </template>
 
 <script>
+/**
+ * Design of view of the courses on the main page.
+ * @name CourseTile
+ * @class
+ * @property {String} url The url of the course
+ * @property {String} authorUrl The url of the author
+ * @property {String} thumbnailPath The thumbnail path 
+ * @property {integer} studentCount Number of students
+ * @property {integer} duration Duration of the course
+ * @property {String} title Title of the course
+ * @property {String} author Name of the author
+ */
 export default {
+	/**
+	 * @memberof CourseTile
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'CourseTile',
 	props: {
 		url: {

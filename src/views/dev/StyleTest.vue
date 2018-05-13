@@ -279,7 +279,17 @@
 </template>
 
 <script>
+/**
+ * Definition of style test. 
+ * @name StyleTest
+ * @class
+ */
 export default {
+	/**
+	 * @memberof StyleTest
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'StyleTest'
 }
 </script>

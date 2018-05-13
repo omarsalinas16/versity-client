@@ -36,7 +36,26 @@ import { get } from '@/utils/api'
 import VueDPlayer from 'vue-dplayer'
 import 'vue-dplayer/dist/vue-dplayer.css'
 
+/**
+ * Definition courses parameters. Loads common CSS stylesheets.
+ * @name Course
+ * @class
+ * @property {String} tile The title string 
+ * @property {String} firstName The first name string 
+ * @property {String} lastName The last name string 
+ * @property {String[]} categories The categories strings 
+ * @property {String} description The description string 
+ * @property {String[]} video The video strings 
+ * @property {String} url The url string 
+ * @property {String} pic The video string 
+ * @property {boolean} autoplay Defines a boolean
+ */
 export default {
+	/**
+	 * @memberof Course
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'Course',
 	data() {
 		return {
@@ -59,6 +78,11 @@ export default {
 		this.loadCourse()
 	},
 	methods: {
+		/**
+		 * This load all the courses availables
+		 * @function
+		 * @name loadCourse
+		 */
 		loadCourse() {
 			const slug = this.$route.params.slug
 
@@ -76,12 +100,22 @@ export default {
 					})
 			}
 		},
+		/**
+		 * This function is called when is an error while loading courses
+		 * @function
+		 * @name onLoadError
+		 */
 		onLoadError(err) {
 			console.error(err)
 			this.setData()
 
 			this.$router.go(-1)
 		},
+		/**
+		 * This function places all the data taken before
+		 * @function
+		 * @name setData
+		 */
 		setData(data) {
 			console.log(data)
 

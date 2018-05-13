@@ -10,9 +10,24 @@
 <script>
 const LoadingIcon = () => import('vue-material-design-icons/loading.vue')
 
+/**
+ * Definition of SpinnerButton. Loads common CSS stylesheets.
+ * @name SpinnerButton
+ * @class
+ */
 export default {
+	/**
+	 * @memberof SpinnerButton
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'SpinnerButton',
 	props: {
+		/**
+		 * Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. 
+		 * @memberof SpinnerButton
+		 * @name loading
+		*/
 		loading: {
 			type: Boolean,
 			default: false,

@@ -8,7 +8,19 @@
 </template>
 
 <script>
+
+/**
+ * Definition of Dashboard.
+ * @name DashboardActive
+ * @class
+ * @property {String[]} courses Courses strings 
+ */
 export default {
+	/**
+	 * @memberof DashboardActive
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'DashboardActive',
 	data() {
 		return {

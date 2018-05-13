@@ -40,7 +40,21 @@ const SpinnerButton = () => import('@/components/SpinnerButton')
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
 
+/**
+ * Definition Sign In page. 
+ * @name SignIn
+ * @class
+ * @property {String} username The username string
+ * @property {String} password The password string
+ * @property {boolean} isLoading Defines a boolean
+ * @property {String} error The error string
+ */
 export default {
+	/**
+	 * @memberof SignIn
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'SignIn',
 	data() {
 		return {
@@ -54,7 +68,8 @@ export default {
 	methods: {
 		/**
 		 * This is called when the submit button in the form is clicked, validates the entire form and if all the inputs are
-		 * correct then allow the request to the API to be made.
+		 * @function
+		 * @name onSubmit
 		 */
 		onSubmit() {
 			this.$validator.validateAll().then((result) => {
@@ -66,6 +81,8 @@ export default {
 		},
 		/**
 		 * This function realizes the quest to the API and awaits a response.
+		 * @function
+		 * @name login
 		 */
 		login() {
 			this.error = ''

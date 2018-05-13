@@ -19,7 +19,17 @@
 const FooterBar = () => import('@/components/FooterBar')
 const SignModal = () => import('@/views/public/SignModal')
 
+/**
+ * Definition of Public Wrapper.
+ * @name PublicWrapper
+ * @class
+ */
 export default {
+	/**
+	 * @memberof PublicWrapper
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'PublicWrapper',
 	components: {
 		FooterBar,

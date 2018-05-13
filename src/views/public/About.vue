@@ -104,13 +104,25 @@
 </template>
 
 <script>
+
 const { swiper, swiperSlide } = require('vue-awesome-swiper')
 const TeamTile = () => import('@/components/about/TeamTile')
 const PlayIcon = () => import('vue-material-design-icons/play.vue')
 
 import 'swiper/dist/css/swiper.css'
 
+/**
+ * Definition About page. Loads common CSS stylesheets.
+ * @name About
+ * @class
+ * @property {String[]} team Here is all the "Team"
+ */
 export default {
+	/**
+	 * @memberof About
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'About',
 	data() {
 		return {

@@ -8,7 +8,19 @@
 </template>
 
 <script>
+
+/**
+ * Definition of DashboardSaved. 
+ * @name DashboardSaved
+ * @class
+ * @property {String[]} courses Saved Courses
+ */
 export default {
+	/**
+	 * @memberof DashboardSaved
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'DashboardSaved',
 	data() {
 		return {

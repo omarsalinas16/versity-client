@@ -30,7 +30,20 @@ const UserMenu = () => import('@/components/UserMenu')
 const NotificationDock = () => import('@/components/NotificationDock')
 const BellOutlineIcon = () => import('vue-material-design-icons/bell-outline.vue')
 
+/**
+ * Definition of search method for navigation. Loads common CSS stylesheets.
+ * @name AppNavBar
+ * @class
+ * @property {String} search The string of what are you looking for
+ * @property {boolean} notifDockActive Lel I don't know 
+ * @property {String[]} notifications  Notifications what else: "Got a meme"
+ */
 export default {
+	/**
+	 * @memberof AppNavBar
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'AppNavBar',
 	data() {
 		return {
@@ -42,6 +55,12 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * Receive the route and send the user to the assigned path.
+		 * @function
+		 * @name onSearch
+		 * @param {string} path The path 
+		 */
 		onSearch() {
 			this.$router.push({ path: 'courses', query: { keywords: this.search }})
 		}

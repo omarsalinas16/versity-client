@@ -63,7 +63,25 @@ const SpinnerButton = () => import('@/components/SpinnerButton')
 const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const GooglePlusIcon = () => import('vue-material-design-icons/google-plus.vue')
 
+/**
+ * Definition Sign Up page. 
+ * @name SignUp
+ * @class
+ * @property {String} firstName The First name string
+ * @property {String} lastName The Last name string
+ * @property {String} email The email string
+ * @property {String} username The username string
+ * @property {String} password The password string
+ * @property {String} passwordCopy The password string
+ * @property {boolean} isLoading Defines a boolean
+ * @property {String} error The error string
+ */
 export default {
+	/**
+	 * @memberof SignUp
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'SignUp',
 	data() {
 		return {
@@ -79,6 +97,11 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * This is called when the submit button in the form is clicked, validates the entire form and if all the inputs are
+		 * @function
+		 * @name onSubmitSignUp
+		 */
 		onSubmitSignUp() {
 			this.$validator.validateAll().then((result) => {
 				if (result) {
@@ -86,6 +109,11 @@ export default {
 				}
 			})
 		},
+		/**
+		 * This is called when the register button in the form is clicked, validates the entire form and if all the inputs are
+		 * @function
+		 * @name register
+		 */
 		register() {
 			this.error = ''
 			this.isLoading = true
@@ -114,6 +142,11 @@ export default {
 				this.isLoading = false
 			})
 		},
+		/**
+		 * This is log in automatically the user
+		 * @function
+		 * @name autoLogin
+		 */
 		autoLogin() {
 			this.error = ''
 			this.isLoading = true

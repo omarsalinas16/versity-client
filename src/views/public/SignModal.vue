@@ -30,7 +30,19 @@
 const SignIn = () => import('@/views/public/sign-modal/SignIn')
 const SignUp = () => import('@/views/public/sign-modal/SignUp')
 
+/**
+ * Definition of SignModal. Defines the model for sign in and sign up page
+ * @name SignModal
+ * @class
+ * @property {String} search The string of what are you looking for
+ * @property {boolean} notifDockActive Defines a boolean
+ */
 export default {
+	/**
+	 * @memberof SignModal
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'SignModal',
 	data() {
 		return {

@@ -61,7 +61,17 @@ const FacebookIcon = () => import('vue-material-design-icons/facebook.vue')
 const YoutubePlayIcon = () => import('vue-material-design-icons/youtube-play.vue')
 const EmailIcon = () => import('vue-material-design-icons/email.vue')
 
+/**
+ * Definition of Footer bar. Loads common CSS stylesheets.
+ * @name FooterBat
+ * @class
+ */
 export default {
+	/**
+	 * @memberof FooterBar
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'FooterBar',
 	components: {
 		TwitterIcon,

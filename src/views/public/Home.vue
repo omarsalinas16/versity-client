@@ -101,7 +101,20 @@ import { post } from '@/utils/api'
 const _ = require('lodash')
 const CourseTile = () => import('@/components/CourseTile')
 
+/**
+ * Definition of all the home page. Loads common CSS stylesheets. Loads eight courses.
+ * @name Home
+ * @class
+ * @property {String[]} courseCategories The course categories strings
+ * @property {String} selectedCategory The selected category string
+ * @property {String[]} courses The courses strings
+ */
 export default {
+	/**
+	 * @memberof Home
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'Home',
 	data() {
 		return {

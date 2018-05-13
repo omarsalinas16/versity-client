@@ -81,7 +81,19 @@ const CloseIcon = () => import('vue-material-design-icons/close.vue')
 
 import 'swiper/dist/css/swiper.css'
 
+/**
+ * Definition of Dashboard.
+ * @name Dashboard
+ * @class
+ * @property {boolean} hasPremium Defines a boolean
+ * @property {boolean} dismissedPremium Defines a boolean
+ */
 export default {
+	/**
+	 * @memberof Dashboard
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'Dashboard',
 	data() {
 		return {
@@ -148,6 +160,11 @@ export default {
 			})
 	},
 	methods: {
+		/**
+		 * Dismiss the Premium Banner.
+		 * @function
+		 * @name dismissPremiumBanner
+		 */
 		dismissPremiumBanner() {
 			this.dismissedPremium = true
 		},

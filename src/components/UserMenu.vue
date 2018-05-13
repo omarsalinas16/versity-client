@@ -27,7 +27,18 @@
 import { get } from '@/utils/api'
 import { mapState, mapGetters } from 'vuex'
 
+/**
+ * Definition of User menu. Loads common CSS stylesheets.
+ * @name UserMenu
+ * @class
+ * @property {boolean} menuActive Defines a boolean
+ */
 export default {
+	/**
+	 * @memberof UserMenu
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'UserMenu',
 	data() {
 		return {
@@ -35,6 +46,12 @@ export default {
 		}
 	},
 	methods: {
+		/**
+		 * Sign out and send user to the assigned path.
+		 * @function
+		 * @name signOut
+		 * @param {string} path The path 
+		 */
 		signOut() {
 			get('user/logout')
 			.finally(res => this.$router.push({ path: '/' }))

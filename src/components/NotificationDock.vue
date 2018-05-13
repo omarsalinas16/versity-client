@@ -13,7 +13,17 @@
 import _ from 'lodash'
 const CloseIcon = () => import('vue-material-design-icons/close.vue')
 
+/**
+ * Definition of NotificationDock. Loads common CSS stylesheets.
+ * @name NotificationDock
+ * @class
+ */
 export default {
+	/**
+	 * @memberof NotificationDock
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'NotificationDock',
 	methods: {
 		close() {
@@ -21,10 +31,19 @@ export default {
 		}
 	},
 	props: {
+		/**
+		 * Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. 
+		 * @memberof NotificationDock
+		 * @name notifications
+		*/
 		notifications: {
 			type: Array,
 			default: [],
 		},
+		/**
+		 * @memberof NotificationDock
+		 * @name onClose
+		*/
 		onClose: {
 			type: Function,
 			default: () => { },

@@ -8,7 +8,19 @@
 </template>
 
 <script>
+
+/**
+ * Definition of DashboardFinished. 
+ * @name DashboardFinished
+ * @class
+ * @property {String[]} courses Finishied courses
+ */
 export default {
+	/**
+	 * @memberof DashboardFinished
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'DashboardFinished',
 	data() {
 		return {

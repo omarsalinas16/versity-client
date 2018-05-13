@@ -6,7 +6,19 @@
 </template>
 
 <script>
+
+/**
+ * Definition of Achievements Dashboard.
+ * @name DashboardAchievements
+ * @class
+ * @property {String[]} achievements Achievements strings 
+ */
 export default {
+	/**
+	 * @memberof DashboardAchievements
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'DashboardAchievements',
 	data() {
 		return {

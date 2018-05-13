@@ -31,7 +31,20 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 
+/**
+ * Definition of user profile.
+ * @name Profile
+ * @class
+ * @property {String} mFirstName The string of what are you looking for
+ * @property {String} mLastName The string of what are you looking for
+ * @property {String} email The string of what are you looking for
+ */
 export default {
+	/**
+	 * @memberof Profile
+	 * @name name
+	 * @const {String}
+	 */
 	name: 'Profile',
 	beforeMount() {
 		this.mFirstName = this.firstName
